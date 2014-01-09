@@ -1,0 +1,101 @@
+﻿
+///////////////////////
+                     //
+    Log-In Form      //
+	                 //
+///////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////
+                     //
+   Admin-Main Form   //
+	                 //
+///////////////////////
+
+1/3/14 11:28 PM
+	CHANGED listview to a dataGridView object. This will allow the admin to select specific parts of a schedule and view additional class details.
+
+
+
+
+
+
+
+
+
+
+///////////////////////
+                     //
+   User-Main Form    //
+	                 //
+///////////////////////
+
+
+[TO DO]
+	[INCOMPLETE]
+		Need to UPDATE listview item to dataGridView item to match that of the Admin-main form.
+
+	[COMPLETE]
+
+
+
+
+
+
+
+
+///////////////////////
+                     //
+   Add-Class Form    //
+	                 //
+///////////////////////
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////
+                     //
+Section-Details Form //
+	                 //
+///////////////////////
+
+
+[TO DO]
+
+	[INCOMPLETE]
+		
+
+	[COMPLETED]
+		ADD looping feature to allow for numerous sections (and their details) to be added.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
