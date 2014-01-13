@@ -63,3 +63,5 @@ C:\Users\Dylan\Documents\CapstoneFall2013\SchedulingSystem\SchedulingSystem\obj\
 C:\Users\Dylan\Documents\CapstoneFall2013\SchedulingSystem\SchedulingSystem\obj\x86\Debug\SchedulingSystem.UserMain.resources
 C:\Users\Dylan\Documents\CapstoneFall2013\SchedulingSystem\SchedulingSystem\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Dylan\Documents\CapstoneFall2013\SchedulingSystem\SchedulingSystem\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Dylan\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\obj\x86\Debug\SchedulingSystem.exe
+C:\Users\Dylan\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\obj\x86\Debug\SchedulingSystem.pdb
