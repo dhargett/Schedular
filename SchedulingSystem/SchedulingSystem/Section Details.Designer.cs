@@ -67,7 +67,7 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(556, 46);
+            this.groupBox2.Location = new System.Drawing.Point(283, 22);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(243, 221);
             this.groupBox2.TabIndex = 6;
@@ -173,7 +173,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(346, 55);
+            this.label1.Location = new System.Drawing.Point(65, 134);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 16);
             this.label1.TabIndex = 0;
@@ -187,7 +187,7 @@
             "Professor 2",
             "Professor 3",
             "Professor 4"});
-            this.comboBox4.Location = new System.Drawing.Point(421, 54);
+            this.comboBox4.Location = new System.Drawing.Point(140, 133);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(97, 21);
             this.comboBox4.TabIndex = 4;
@@ -303,7 +303,7 @@
             // 
             // button_Submit
             // 
-            this.button_Submit.Location = new System.Drawing.Point(645, 332);
+            this.button_Submit.Location = new System.Drawing.Point(451, 284);
             this.button_Submit.Name = "button_Submit";
             this.button_Submit.Size = new System.Drawing.Size(75, 23);
             this.button_Submit.TabIndex = 13;
@@ -316,7 +316,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
-            this.ClientSize = new System.Drawing.Size(863, 416);
+            this.ClientSize = new System.Drawing.Size(553, 329);
             this.Controls.Add(this.button_Submit);
             this.Controls.Add(this.label_NumberDynamic);
             this.Controls.Add(this.label2);
