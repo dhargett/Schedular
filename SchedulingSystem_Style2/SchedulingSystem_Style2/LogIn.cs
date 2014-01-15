@@ -15,5 +15,11 @@ namespace SchedulingSystem_Style2
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UserMain usermain = new UserMain();
+            usermain.Show();
+        }
     }
 }
