@@ -30,11 +30,11 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label_Welcome = new System.Windows.Forms.Label();
             this.label_UserName = new System.Windows.Forms.Label();
+            this.label_Welcome = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label_Logout = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -64,6 +64,26 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label_UserName
+            // 
+            this.label_UserName.AutoSize = true;
+            this.label_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_UserName.Location = new System.Drawing.Point(118, 13);
+            this.label_UserName.Name = "label_UserName";
+            this.label_UserName.Size = new System.Drawing.Size(47, 20);
+            this.label_UserName.TabIndex = 0;
+            this.label_UserName.Text = "User";
+            // 
+            // label_Welcome
+            // 
+            this.label_Welcome.AutoSize = true;
+            this.label_Welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Welcome.Location = new System.Drawing.Point(34, 13);
+            this.label_Welcome.Name = "label_Welcome";
+            this.label_Welcome.Size = new System.Drawing.Size(87, 20);
+            this.label_Welcome.TabIndex = 0;
+            this.label_Welcome.Text = "Welcome,";
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.groupBox1);
@@ -76,14 +96,6 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(679, 450);
-            this.dataGridView1.TabIndex = 0;
-            // 
             // groupBox1
             // 
             this.groupBox1.Location = new System.Drawing.Point(704, 17);
@@ -93,25 +105,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // label_Welcome
+            // dataGridView1
             // 
-            this.label_Welcome.AutoSize = true;
-            this.label_Welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Welcome.Location = new System.Drawing.Point(34, 13);
-            this.label_Welcome.Name = "label_Welcome";
-            this.label_Welcome.Size = new System.Drawing.Size(87, 20);
-            this.label_Welcome.TabIndex = 0;
-            this.label_Welcome.Text = "Welcome,";
-            // 
-            // label_UserName
-            // 
-            this.label_UserName.AutoSize = true;
-            this.label_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_UserName.Location = new System.Drawing.Point(118, 13);
-            this.label_UserName.Name = "label_UserName";
-            this.label_UserName.Size = new System.Drawing.Size(47, 20);
-            this.label_UserName.TabIndex = 0;
-            this.label_UserName.Text = "User";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(679, 450);
+            this.dataGridView1.TabIndex = 0;
             // 
             // label_Logout
             // 

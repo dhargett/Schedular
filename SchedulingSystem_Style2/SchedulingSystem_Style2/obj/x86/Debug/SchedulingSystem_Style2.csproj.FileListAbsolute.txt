@@ -8,3 +8,17 @@ C:\Users\Dylan\Documents\GitHub\Schedular\SchedulingSystem_Style2\SchedulingSyst
 C:\Users\Dylan\Documents\GitHub\Schedular\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Dylan\Documents\GitHub\Schedular\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\SchedulingSystem_Style2.exe
 C:\Users\Dylan\Documents\GitHub\Schedular\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\SchedulingSystem_Style2.pdb
+C:\Users\MSU User\Desktop\Schedular-master\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\SchedulingSystem_Style2.exe
+C:\Users\MSU User\Desktop\Schedular-master\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\SchedulingSystem_Style2.pdb
+C:\Users\MSU User\Desktop\Schedular-master\SchedulingSystem_Style2\SchedulingSystem_Style2\bin\Debug\SchedulingSystem_Style2.exe
+C:\Users\MSU User\Desktop\Schedular-master\SchedulingSystem_Style2\SchedulingSystem_Style2\bin\Debug\SchedulingSystem_Style2.pdb
+C:\Users\MSU User\Desktop\Schedular-master\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\MSU User\Desktop\Schedular-master\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\SchedulingSystem.AddClass.resources
+C:\Users\MSU User\Desktop\Schedular-master\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\SchedulingSystem.AddProfessor.resources
+C:\Users\MSU User\Desktop\Schedular-master\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\SchedulingSystem_Style2.AdminMain.resources
+C:\Users\MSU User\Desktop\Schedular-master\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\SchedulingSystem_Style2.LogIn.resources
+C:\Users\MSU User\Desktop\Schedular-master\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\SchedulingSystem_Style2.Properties.Resources.resources
+C:\Users\MSU User\Desktop\Schedular-master\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\SchedulingSystem.Section_Details.resources
+C:\Users\MSU User\Desktop\Schedular-master\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\SchedulingSystem_Style2.UserMain.resources
+C:\Users\MSU User\Desktop\Schedular-master\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\MSU User\Desktop\Schedular-master\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\GenerateResource.write.1.tlog

@@ -18,8 +18,21 @@ namespace SchedulingSystem_Style2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UserMain usermain = new UserMain();
-            usermain.Show();
+            if (textBox1.Text == "Admin" && maskedTextBox1.Text == "")
+            {
+                AdminMain adminMain = new AdminMain();
+                adminMain.Show();
+            }
+
+            else if (textBox1.Text == "User" && maskedTextBox1.Text == "")
+            {
+                UserMain userMain = new UserMain();
+                userMain.Show();
+            }
+
+            else
+                MessageBox.Show("Invalid Log-In. Please try again.");
+            
         }
     }
 }
