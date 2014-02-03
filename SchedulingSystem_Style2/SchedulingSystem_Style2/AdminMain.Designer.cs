@@ -34,6 +34,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button_AddClass_ViewClasses = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -64,15 +66,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label_Logout = new System.Windows.Forms.Label();
+            this.button_AddClass_DoneEditing = new System.Windows.Forms.Button();
+            this.button_AddClass_Edit = new System.Windows.Forms.Button();
+            this.button_AddClass_Delete = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Sections)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -128,6 +136,9 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.Gold;
+            this.tabPage3.Controls.Add(this.panel3);
+            this.tabPage3.Controls.Add(this.dataGridView2);
             this.tabPage3.Controls.Add(this.panel2);
             this.tabPage3.Controls.Add(this.panel1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -135,7 +146,25 @@
             this.tabPage3.Size = new System.Drawing.Size(962, 462);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Add Class";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button_AddClass_ViewClasses
+            // 
+            this.button_AddClass_ViewClasses.Location = new System.Drawing.Point(15, 9);
+            this.button_AddClass_ViewClasses.Name = "button_AddClass_ViewClasses";
+            this.button_AddClass_ViewClasses.Size = new System.Drawing.Size(96, 23);
+            this.button_AddClass_ViewClasses.TabIndex = 20;
+            this.button_AddClass_ViewClasses.Text = "View Classes";
+            this.button_AddClass_ViewClasses.UseVisualStyleBackColor = true;
+            this.button_AddClass_ViewClasses.Click += new System.EventHandler(this.button_AddClass_ViewClasses_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(466, 15);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(478, 383);
+            this.dataGridView2.TabIndex = 19;
             // 
             // panel2
             // 
@@ -241,7 +270,7 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.ForeColor = System.Drawing.Color.Black;
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(206, 34);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(212, 192);
@@ -381,7 +410,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(35, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 16);
@@ -404,7 +433,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(53, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 16);
@@ -422,7 +451,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(53, 85);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 16);
@@ -447,7 +476,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(45, 110);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 16);
@@ -474,6 +503,48 @@
             this.label_Logout.TabIndex = 1;
             this.label_Logout.Text = "Logout";
             // 
+            // button_AddClass_DoneEditing
+            // 
+            this.button_AddClass_DoneEditing.Location = new System.Drawing.Point(262, 9);
+            this.button_AddClass_DoneEditing.Name = "button_AddClass_DoneEditing";
+            this.button_AddClass_DoneEditing.Size = new System.Drawing.Size(87, 23);
+            this.button_AddClass_DoneEditing.TabIndex = 21;
+            this.button_AddClass_DoneEditing.Text = "Done Editing";
+            this.button_AddClass_DoneEditing.UseVisualStyleBackColor = true;
+            this.button_AddClass_DoneEditing.Click += new System.EventHandler(this.button_AddClass_DoneEditing_Click);
+            // 
+            // button_AddClass_Edit
+            // 
+            this.button_AddClass_Edit.Location = new System.Drawing.Point(262, 9);
+            this.button_AddClass_Edit.Name = "button_AddClass_Edit";
+            this.button_AddClass_Edit.Size = new System.Drawing.Size(87, 23);
+            this.button_AddClass_Edit.TabIndex = 21;
+            this.button_AddClass_Edit.Text = "Edit";
+            this.button_AddClass_Edit.UseVisualStyleBackColor = true;
+            this.button_AddClass_Edit.Click += new System.EventHandler(this.button_AddClass_Edit_Click);
+            // 
+            // button_AddClass_Delete
+            // 
+            this.button_AddClass_Delete.Location = new System.Drawing.Point(368, 9);
+            this.button_AddClass_Delete.Name = "button_AddClass_Delete";
+            this.button_AddClass_Delete.Size = new System.Drawing.Size(87, 23);
+            this.button_AddClass_Delete.TabIndex = 21;
+            this.button_AddClass_Delete.Text = "Delete";
+            this.button_AddClass_Delete.UseVisualStyleBackColor = true;
+            this.button_AddClass_Delete.Click += new System.EventHandler(this.button_AddClass_Delete_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
+            this.panel3.Controls.Add(this.button_AddClass_ViewClasses);
+            this.panel3.Controls.Add(this.button_AddClass_Delete);
+            this.panel3.Controls.Add(this.button_AddClass_Edit);
+            this.panel3.Controls.Add(this.button_AddClass_DoneEditing);
+            this.panel3.Location = new System.Drawing.Point(466, 404);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(478, 44);
+            this.panel3.TabIndex = 22;
+            // 
             // AdminMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -488,6 +559,7 @@
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -496,6 +568,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Sections)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -539,5 +612,11 @@
         private System.Windows.Forms.Label label_SectionsLeft;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button_AddClass_ViewClasses;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button button_AddClass_Delete;
+        private System.Windows.Forms.Button button_AddClass_Edit;
+        private System.Windows.Forms.Button button_AddClass_DoneEditing;
+        private System.Windows.Forms.Panel panel3;
     }
 }

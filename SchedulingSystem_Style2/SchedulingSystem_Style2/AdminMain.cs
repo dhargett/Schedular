@@ -18,6 +18,9 @@ namespace SchedulingSystem_Style2
             InitializeComponent();
 
             panel2.Enabled = false;
+            button_AddClass_Edit.Visible = false;
+            button_AddClass_Delete.Visible = false;
+            button_AddClass_DoneEditing.Visible = false;
         }
 
 
@@ -83,6 +86,105 @@ namespace SchedulingSystem_Style2
                 comboBox2.Enabled = true;
                 comboBox3.Enabled = true;
             }
+        }
+
+        private void button_AddClass_ViewClasses_Click(object sender, EventArgs e)
+        {
+            //
+            // View Faculty
+            //
+
+            dataGridView2.Columns.Clear();
+            dataGridView2.Rows.Clear();
+
+            // Add Column headers
+            dataGridView2.Columns.Add("lastName", "Last Name");
+            dataGridView2.Columns.Add("firstName", "First Name");
+            dataGridView2.Columns.Add("officeNum", "Office #");
+            dataGridView2.Columns.Add("officePhoneNum", "Office Phone #");
+            dataGridView2.Columns.Add("mobilePhoneNum", "Mobile Phone #");
+
+            dataGridView2.Rows.Add("Ahmadi", "Dora", "LA 108", "555-5555", "444-4444");
+            dataGridView2.Rows.Add("Skaggs", "Duane", "LA 205B", "555-5555", "444-4444");
+
+
+            dataGridView2.ForeColor = Color.Black;
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView2.ReadOnly = true;
+
+
+            button_AddClass_Edit.Visible = true;
+            button_AddClass_Delete.Visible = true;
+
+
+        }
+
+        private void button_AddClass_Edit_Click(object sender, EventArgs e)
+        {
+            button_AddClass_Edit.Hide();
+            button_AddClass_Delete.Hide();
+            button_AddClass_DoneEditing.Show();
+
+            if (dataGridView2.SelectedRows.Count >= 1)
+            {
+
+                if (button_AddClass_DoneEditing.Visible == true)
+                {
+                    dataGridView2.ReadOnly = false;
+                }
+
+                else
+                {
+                    MessageBox.Show("Error 1.13_2.5.3");
+                }
+            }
+
+            else
+            {
+                button_AddClass_Edit.Show();
+                MessageBox.Show("Please select a record to edit.");                
+            }
+        }
+
+        private void button_AddClass_DoneEditing_Click(object sender, EventArgs e)
+        {
+            button_AddClass_DoneEditing.Hide();
+            button_AddClass_Edit.Show();
+            dataGridView2.ReadOnly = true;
+            button_AddClass_Delete.Show();
+        }
+
+        private void button_AddClass_Delete_Click(object sender, EventArgs e)
+        {   //
+            // Allows Admin to delete professor records
+            //
+            if (dataGridView2.SelectedRows.Count > 0)
+            {
+                string message = "Do you wish to delete the selected record(s)?";
+                string caption = "Error";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNoCancel;
+                if (MessageBox.Show(message, caption, buttons) == DialogResult.Yes)
+                {
+                    int count = 0;
+                    dataGridView2.AllowUserToDeleteRows = true;
+                    foreach (DataGridViewRow row in dataGridView2.SelectedRows)
+                    {
+                        if (!row.IsNewRow)
+                            dataGridView2.Rows.Remove(row);
+                        count++;
+                    }
+
+                    MessageBox.Show(count + " record(s) deleted.");
+                }
+
+                else
+                {
+                    MessageBox.Show("0 records deleted."); // Error message. Numbers represent first letters in form and method
+                }                                        //   each seperated by an underscore.
+            }
+
+            else
+                MessageBox.Show("Please select a record to delete."); 
         }
     }
 }

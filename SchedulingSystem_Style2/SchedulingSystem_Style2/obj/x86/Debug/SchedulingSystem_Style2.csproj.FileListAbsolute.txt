@@ -22,3 +22,7 @@ C:\Users\MSU User\Desktop\Schedular-master\SchedulingSystem_Style2\SchedulingSys
 C:\Users\MSU User\Desktop\Schedular-master\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\SchedulingSystem_Style2.UserMain.resources
 C:\Users\MSU User\Desktop\Schedular-master\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\MSU User\Desktop\Schedular-master\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Dylan\Documents\GitHub\Schedular\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\SchedulingSystem.AddClass.resources
+C:\Users\Dylan\Documents\GitHub\Schedular\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\SchedulingSystem.AddProfessor.resources
+C:\Users\Dylan\Documents\GitHub\Schedular\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\SchedulingSystem_Style2.AdminMain.resources
+C:\Users\Dylan\Documents\GitHub\Schedular\SchedulingSystem_Style2\SchedulingSystem_Style2\obj\x86\Debug\SchedulingSystem.Section_Details.resources
