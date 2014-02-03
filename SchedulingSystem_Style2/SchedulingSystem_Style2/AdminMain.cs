@@ -23,6 +23,10 @@ namespace SchedulingSystem_Style2
             button_AddClass_DoneEditing.Visible = false;
         }
 
+        /*////////////////////////////////
+         * `Add class tab
+         * 
+         *//////////////////////////////
 
         private void button_AddClass_Next_Click(object sender, EventArgs e)
         {
@@ -32,8 +36,6 @@ namespace SchedulingSystem_Style2
             label_SectionsRight.Text = sections;
             label_NumberDynamic.Text = Count.ToString();
         }
-
-        
 
         private void button_AddClass_Submit_Click(object sender, EventArgs e)
         {
@@ -94,23 +96,23 @@ namespace SchedulingSystem_Style2
             // View Faculty
             //
 
-            dataGridView2.Columns.Clear();
-            dataGridView2.Rows.Clear();
+            dataGridView_Class.Columns.Clear();
+            dataGridView_Class.Rows.Clear();
 
             // Add Column headers
-            dataGridView2.Columns.Add("lastName", "Last Name");
-            dataGridView2.Columns.Add("firstName", "First Name");
-            dataGridView2.Columns.Add("officeNum", "Office #");
-            dataGridView2.Columns.Add("officePhoneNum", "Office Phone #");
-            dataGridView2.Columns.Add("mobilePhoneNum", "Mobile Phone #");
+            dataGridView_Class.Columns.Add("lastName", "Last Name");
+            dataGridView_Class.Columns.Add("firstName", "First Name");
+            dataGridView_Class.Columns.Add("officeNum", "Office #");
+            dataGridView_Class.Columns.Add("officePhoneNum", "Office Phone #");
+            dataGridView_Class.Columns.Add("mobilePhoneNum", "Mobile Phone #");
 
-            dataGridView2.Rows.Add("Ahmadi", "Dora", "LA 108", "555-5555", "444-4444");
-            dataGridView2.Rows.Add("Skaggs", "Duane", "LA 205B", "555-5555", "444-4444");
+            dataGridView_Class.Rows.Add("Ahmadi", "Dora", "LA 108", "555-5555", "444-4444");
+            dataGridView_Class.Rows.Add("Skaggs", "Duane", "LA 205B", "555-5555", "444-4444");
 
 
-            dataGridView2.ForeColor = Color.Black;
-            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.ReadOnly = true;
+            dataGridView_Class.ForeColor = Color.Black;
+            dataGridView_Class.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView_Class.ReadOnly = true;
 
 
             button_AddClass_Edit.Visible = true;
@@ -125,12 +127,12 @@ namespace SchedulingSystem_Style2
             button_AddClass_Delete.Hide();
             button_AddClass_DoneEditing.Show();
 
-            if (dataGridView2.SelectedRows.Count >= 1)
+            if (dataGridView_Class.SelectedRows.Count >= 1)
             {
 
                 if (button_AddClass_DoneEditing.Visible == true)
                 {
-                    dataGridView2.ReadOnly = false;
+                    dataGridView_Class.ReadOnly = false;
                 }
 
                 else
@@ -150,7 +152,7 @@ namespace SchedulingSystem_Style2
         {
             button_AddClass_DoneEditing.Hide();
             button_AddClass_Edit.Show();
-            dataGridView2.ReadOnly = true;
+            dataGridView_Class.ReadOnly = true;
             button_AddClass_Delete.Show();
         }
 
@@ -158,7 +160,7 @@ namespace SchedulingSystem_Style2
         {   //
             // Allows Admin to delete professor records
             //
-            if (dataGridView2.SelectedRows.Count > 0)
+            if (dataGridView_Class.SelectedRows.Count > 0)
             {
                 string message = "Do you wish to delete the selected record(s)?";
                 string caption = "Error";
@@ -166,11 +168,11 @@ namespace SchedulingSystem_Style2
                 if (MessageBox.Show(message, caption, buttons) == DialogResult.Yes)
                 {
                     int count = 0;
-                    dataGridView2.AllowUserToDeleteRows = true;
-                    foreach (DataGridViewRow row in dataGridView2.SelectedRows)
+                    dataGridView_Class.AllowUserToDeleteRows = true;
+                    foreach (DataGridViewRow row in dataGridView_Class.SelectedRows)
                     {
                         if (!row.IsNewRow)
-                            dataGridView2.Rows.Remove(row);
+                            dataGridView_Class.Rows.Remove(row);
                         count++;
                     }
 
@@ -185,6 +187,55 @@ namespace SchedulingSystem_Style2
 
             else
                 MessageBox.Show("Please select a record to delete."); 
+        }
+
+        /*/////////////////////////////////////////////
+         *  Add professor Tab
+         * 
+         *////////////////////////////////////////////
+
+        private void button_AddProfessor_ViewProfessors_Click(object sender, EventArgs e)
+        {
+            //
+            // View Faculty
+            //
+
+            dataGridView_Class.Columns.Clear();
+            dataGridView_Class.Rows.Clear();
+
+            // Add Column headers
+            dataGridView_Class.Columns.Add("lastName", "Last Name");
+            dataGridView_Class.Columns.Add("firstName", "First Name");
+            dataGridView_Class.Columns.Add("officeNum", "Office #");
+            dataGridView_Class.Columns.Add("officePhoneNum", "Office Phone #");
+            dataGridView_Class.Columns.Add("mobilePhoneNum", "Mobile Phone #");
+
+            dataGridView_Class.Rows.Add("Ahmadi", "Dora", "LA 108", "555-5555", "444-4444");
+            dataGridView_Class.Rows.Add("Skaggs", "Duane", "LA 205B", "555-5555", "444-4444");
+
+
+            dataGridView_Class.ForeColor = Color.Black;
+            dataGridView_Class.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView_Class.ReadOnly = true;
+
+
+            button_AddClass_Edit.Visible = true;
+            button_AddClass_Delete.Visible = true;
+        }
+
+        private void button_AddProfessor_Edit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_AddProfessor_Delete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_AddProfessor_DoneEditing_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

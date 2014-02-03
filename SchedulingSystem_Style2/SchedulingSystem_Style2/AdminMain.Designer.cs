@@ -33,9 +33,35 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.button_AddProfessor_ViewProfessors = new System.Windows.Forms.Button();
+            this.button_AddProfessor_Delete = new System.Windows.Forms.Button();
+            this.button_AddProfessor_Edit = new System.Windows.Forms.Button();
+            this.button_AddProfessor_DoneEditing = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkBox_OfficePhoneNumberNA = new System.Windows.Forms.CheckBox();
+            this.checkBox_CellPhoneNumberNA = new System.Windows.Forms.CheckBox();
+            this.button_Submit = new System.Windows.Forms.Button();
+            this.maskedTextBox_OfficePhoneNumberRight = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox_CellPhoneNumberRight = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox_MsuIDRight = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_LastNameRight = new System.Windows.Forms.TextBox();
+            this.textBox_OfficeRoomNumberRight = new System.Windows.Forms.TextBox();
+            this.textBox_FirstNameRight = new System.Windows.Forms.TextBox();
+            this.label_CellPhoneNumberLeft = new System.Windows.Forms.Label();
+            this.label_OfficePhoneNumberLeft = new System.Windows.Forms.Label();
+            this.label_MsuIDLeft = new System.Windows.Forms.Label();
+            this.label_OfficeRoomNumberLeft = new System.Windows.Forms.Label();
+            this.label_LastNameLeft = new System.Windows.Forms.Label();
+            this.label_FirstNameLeft = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.button_AddClass_ViewClasses = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.button_AddClass_Delete = new System.Windows.Forms.Button();
+            this.button_AddClass_Edit = new System.Windows.Forms.Button();
+            this.button_AddClass_DoneEditing = new System.Windows.Forms.Button();
+            this.dataGridView_Class = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -66,21 +92,23 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label_Logout = new System.Windows.Forms.Label();
-            this.button_AddClass_DoneEditing = new System.Windows.Forms.Button();
-            this.button_AddClass_Edit = new System.Windows.Forms.Button();
-            this.button_AddClass_Delete = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.dataGridView_Professor = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Class)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Sections)).BeginInit();
-            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Professor)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -97,6 +125,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.Gold;
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -105,7 +134,6 @@
             this.tabPage1.Size = new System.Drawing.Size(962, 462);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Schedule";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -126,19 +154,242 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.Gold;
+            this.tabPage2.Controls.Add(this.dataGridView_Professor);
+            this.tabPage2.Controls.Add(this.panel5);
+            this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(962, 462);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Add Professor";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
+            this.panel5.Controls.Add(this.button_AddProfessor_ViewProfessors);
+            this.panel5.Controls.Add(this.button_AddProfessor_Delete);
+            this.panel5.Controls.Add(this.button_AddProfessor_Edit);
+            this.panel5.Controls.Add(this.button_AddProfessor_DoneEditing);
+            this.panel5.Location = new System.Drawing.Point(379, 407);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(566, 44);
+            this.panel5.TabIndex = 24;
+            // 
+            // button_AddProfessor_ViewProfessors
+            // 
+            this.button_AddProfessor_ViewProfessors.Location = new System.Drawing.Point(15, 9);
+            this.button_AddProfessor_ViewProfessors.Name = "button_AddProfessor_ViewProfessors";
+            this.button_AddProfessor_ViewProfessors.Size = new System.Drawing.Size(96, 23);
+            this.button_AddProfessor_ViewProfessors.TabIndex = 20;
+            this.button_AddProfessor_ViewProfessors.Text = "View Professors";
+            this.button_AddProfessor_ViewProfessors.UseVisualStyleBackColor = true;
+            this.button_AddProfessor_ViewProfessors.Click += new System.EventHandler(this.button_AddProfessor_ViewProfessors_Click);
+            // 
+            // button_AddProfessor_Delete
+            // 
+            this.button_AddProfessor_Delete.Location = new System.Drawing.Point(465, 9);
+            this.button_AddProfessor_Delete.Name = "button_AddProfessor_Delete";
+            this.button_AddProfessor_Delete.Size = new System.Drawing.Size(87, 23);
+            this.button_AddProfessor_Delete.TabIndex = 21;
+            this.button_AddProfessor_Delete.Text = "Delete";
+            this.button_AddProfessor_Delete.UseVisualStyleBackColor = true;
+            this.button_AddProfessor_Delete.Click += new System.EventHandler(this.button_AddProfessor_Delete_Click);
+            // 
+            // button_AddProfessor_Edit
+            // 
+            this.button_AddProfessor_Edit.Location = new System.Drawing.Point(359, 9);
+            this.button_AddProfessor_Edit.Name = "button_AddProfessor_Edit";
+            this.button_AddProfessor_Edit.Size = new System.Drawing.Size(87, 23);
+            this.button_AddProfessor_Edit.TabIndex = 21;
+            this.button_AddProfessor_Edit.Text = "Edit";
+            this.button_AddProfessor_Edit.UseVisualStyleBackColor = true;
+            this.button_AddProfessor_Edit.Click += new System.EventHandler(this.button_AddProfessor_Edit_Click);
+            // 
+            // button_AddProfessor_DoneEditing
+            // 
+            this.button_AddProfessor_DoneEditing.Location = new System.Drawing.Point(359, 9);
+            this.button_AddProfessor_DoneEditing.Name = "button_AddProfessor_DoneEditing";
+            this.button_AddProfessor_DoneEditing.Size = new System.Drawing.Size(87, 23);
+            this.button_AddProfessor_DoneEditing.TabIndex = 21;
+            this.button_AddProfessor_DoneEditing.Text = "Done Editing";
+            this.button_AddProfessor_DoneEditing.UseVisualStyleBackColor = true;
+            this.button_AddProfessor_DoneEditing.Click += new System.EventHandler(this.button_AddProfessor_DoneEditing_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
+            this.panel4.Controls.Add(this.groupBox3);
+            this.panel4.Location = new System.Drawing.Point(18, 18);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(312, 256);
+            this.panel4.TabIndex = 2;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.checkBox_OfficePhoneNumberNA);
+            this.groupBox3.Controls.Add(this.checkBox_CellPhoneNumberNA);
+            this.groupBox3.Controls.Add(this.button_Submit);
+            this.groupBox3.Controls.Add(this.maskedTextBox_OfficePhoneNumberRight);
+            this.groupBox3.Controls.Add(this.maskedTextBox_CellPhoneNumberRight);
+            this.groupBox3.Controls.Add(this.maskedTextBox_MsuIDRight);
+            this.groupBox3.Controls.Add(this.textBox_LastNameRight);
+            this.groupBox3.Controls.Add(this.textBox_OfficeRoomNumberRight);
+            this.groupBox3.Controls.Add(this.textBox_FirstNameRight);
+            this.groupBox3.Controls.Add(this.label_CellPhoneNumberLeft);
+            this.groupBox3.Controls.Add(this.label_OfficePhoneNumberLeft);
+            this.groupBox3.Controls.Add(this.label_MsuIDLeft);
+            this.groupBox3.Controls.Add(this.label_OfficeRoomNumberLeft);
+            this.groupBox3.Controls.Add(this.label_LastNameLeft);
+            this.groupBox3.Controls.Add(this.label_FirstNameLeft);
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.Location = new System.Drawing.Point(17, 14);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(277, 226);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Professor Info";
+            // 
+            // checkBox_OfficePhoneNumberNA
+            // 
+            this.checkBox_OfficePhoneNumberNA.AutoSize = true;
+            this.checkBox_OfficePhoneNumberNA.Location = new System.Drawing.Point(222, 136);
+            this.checkBox_OfficePhoneNumberNA.Name = "checkBox_OfficePhoneNumberNA";
+            this.checkBox_OfficePhoneNumberNA.Size = new System.Drawing.Size(46, 17);
+            this.checkBox_OfficePhoneNumberNA.TabIndex = 4;
+            this.checkBox_OfficePhoneNumberNA.Text = "N/A";
+            this.checkBox_OfficePhoneNumberNA.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_CellPhoneNumberNA
+            // 
+            this.checkBox_CellPhoneNumberNA.AutoSize = true;
+            this.checkBox_CellPhoneNumberNA.Location = new System.Drawing.Point(222, 164);
+            this.checkBox_CellPhoneNumberNA.Name = "checkBox_CellPhoneNumberNA";
+            this.checkBox_CellPhoneNumberNA.Size = new System.Drawing.Size(46, 17);
+            this.checkBox_CellPhoneNumberNA.TabIndex = 4;
+            this.checkBox_CellPhoneNumberNA.Text = "N/A";
+            this.checkBox_CellPhoneNumberNA.UseVisualStyleBackColor = true;
+            // 
+            // button_Submit
+            // 
+            this.button_Submit.ForeColor = System.Drawing.Color.Black;
+            this.button_Submit.Location = new System.Drawing.Point(193, 196);
+            this.button_Submit.Name = "button_Submit";
+            this.button_Submit.Size = new System.Drawing.Size(75, 23);
+            this.button_Submit.TabIndex = 3;
+            this.button_Submit.Text = "Submit";
+            this.button_Submit.UseVisualStyleBackColor = true;
+            // 
+            // maskedTextBox_OfficePhoneNumberRight
+            // 
+            this.maskedTextBox_OfficePhoneNumberRight.Location = new System.Drawing.Point(116, 134);
+            this.maskedTextBox_OfficePhoneNumberRight.Mask = "000-0000";
+            this.maskedTextBox_OfficePhoneNumberRight.Name = "maskedTextBox_OfficePhoneNumberRight";
+            this.maskedTextBox_OfficePhoneNumberRight.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox_OfficePhoneNumberRight.TabIndex = 2;
+            // 
+            // maskedTextBox_CellPhoneNumberRight
+            // 
+            this.maskedTextBox_CellPhoneNumberRight.Location = new System.Drawing.Point(116, 159);
+            this.maskedTextBox_CellPhoneNumberRight.Mask = "(999) 000-0000";
+            this.maskedTextBox_CellPhoneNumberRight.Name = "maskedTextBox_CellPhoneNumberRight";
+            this.maskedTextBox_CellPhoneNumberRight.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox_CellPhoneNumberRight.TabIndex = 2;
+            // 
+            // maskedTextBox_MsuIDRight
+            // 
+            this.maskedTextBox_MsuIDRight.Location = new System.Drawing.Point(116, 79);
+            this.maskedTextBox_MsuIDRight.Name = "maskedTextBox_MsuIDRight";
+            this.maskedTextBox_MsuIDRight.Size = new System.Drawing.Size(134, 20);
+            this.maskedTextBox_MsuIDRight.TabIndex = 2;
+            // 
+            // textBox_LastNameRight
+            // 
+            this.textBox_LastNameRight.Location = new System.Drawing.Point(116, 54);
+            this.textBox_LastNameRight.Name = "textBox_LastNameRight";
+            this.textBox_LastNameRight.Size = new System.Drawing.Size(134, 20);
+            this.textBox_LastNameRight.TabIndex = 1;
+            // 
+            // textBox_OfficeRoomNumberRight
+            // 
+            this.textBox_OfficeRoomNumberRight.Location = new System.Drawing.Point(116, 109);
+            this.textBox_OfficeRoomNumberRight.Name = "textBox_OfficeRoomNumberRight";
+            this.textBox_OfficeRoomNumberRight.Size = new System.Drawing.Size(71, 20);
+            this.textBox_OfficeRoomNumberRight.TabIndex = 1;
+            // 
+            // textBox_FirstNameRight
+            // 
+            this.textBox_FirstNameRight.Location = new System.Drawing.Point(116, 29);
+            this.textBox_FirstNameRight.Name = "textBox_FirstNameRight";
+            this.textBox_FirstNameRight.Size = new System.Drawing.Size(134, 20);
+            this.textBox_FirstNameRight.TabIndex = 1;
+            // 
+            // label_CellPhoneNumberLeft
+            // 
+            this.label_CellPhoneNumberLeft.AutoSize = true;
+            this.label_CellPhoneNumberLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_CellPhoneNumberLeft.Location = new System.Drawing.Point(24, 163);
+            this.label_CellPhoneNumberLeft.Name = "label_CellPhoneNumberLeft";
+            this.label_CellPhoneNumberLeft.Size = new System.Drawing.Size(86, 16);
+            this.label_CellPhoneNumberLeft.TabIndex = 0;
+            this.label_CellPhoneNumberLeft.Text = "Cell Phone #:";
+            // 
+            // label_OfficePhoneNumberLeft
+            // 
+            this.label_OfficePhoneNumberLeft.AutoSize = true;
+            this.label_OfficePhoneNumberLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_OfficePhoneNumberLeft.Location = new System.Drawing.Point(13, 138);
+            this.label_OfficePhoneNumberLeft.Name = "label_OfficePhoneNumberLeft";
+            this.label_OfficePhoneNumberLeft.Size = new System.Drawing.Size(97, 16);
+            this.label_OfficePhoneNumberLeft.TabIndex = 0;
+            this.label_OfficePhoneNumberLeft.Text = "Office Phone #:";
+            // 
+            // label_MsuIDLeft
+            // 
+            this.label_MsuIDLeft.AutoSize = true;
+            this.label_MsuIDLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_MsuIDLeft.Location = new System.Drawing.Point(53, 83);
+            this.label_MsuIDLeft.Name = "label_MsuIDLeft";
+            this.label_MsuIDLeft.Size = new System.Drawing.Size(57, 16);
+            this.label_MsuIDLeft.TabIndex = 0;
+            this.label_MsuIDLeft.Text = "MSU ID:";
+            // 
+            // label_OfficeRoomNumberLeft
+            // 
+            this.label_OfficeRoomNumberLeft.AutoSize = true;
+            this.label_OfficeRoomNumberLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_OfficeRoomNumberLeft.Location = new System.Drawing.Point(15, 113);
+            this.label_OfficeRoomNumberLeft.Name = "label_OfficeRoomNumberLeft";
+            this.label_OfficeRoomNumberLeft.Size = new System.Drawing.Size(95, 16);
+            this.label_OfficeRoomNumberLeft.TabIndex = 0;
+            this.label_OfficeRoomNumberLeft.Text = "Office Room #:";
+            // 
+            // label_LastNameLeft
+            // 
+            this.label_LastNameLeft.AutoSize = true;
+            this.label_LastNameLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_LastNameLeft.Location = new System.Drawing.Point(34, 58);
+            this.label_LastNameLeft.Name = "label_LastNameLeft";
+            this.label_LastNameLeft.Size = new System.Drawing.Size(76, 16);
+            this.label_LastNameLeft.TabIndex = 0;
+            this.label_LastNameLeft.Text = "Last Name:";
+            // 
+            // label_FirstNameLeft
+            // 
+            this.label_FirstNameLeft.AutoSize = true;
+            this.label_FirstNameLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_FirstNameLeft.Location = new System.Drawing.Point(34, 33);
+            this.label_FirstNameLeft.Name = "label_FirstNameLeft";
+            this.label_FirstNameLeft.Size = new System.Drawing.Size(76, 16);
+            this.label_FirstNameLeft.TabIndex = 0;
+            this.label_FirstNameLeft.Text = "First Name:";
             // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.Gold;
             this.tabPage3.Controls.Add(this.panel3);
-            this.tabPage3.Controls.Add(this.dataGridView2);
+            this.tabPage3.Controls.Add(this.dataGridView_Class);
             this.tabPage3.Controls.Add(this.panel2);
             this.tabPage3.Controls.Add(this.panel1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -146,6 +397,18 @@
             this.tabPage3.Size = new System.Drawing.Size(962, 462);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Add Class";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
+            this.panel3.Controls.Add(this.button_AddClass_ViewClasses);
+            this.panel3.Controls.Add(this.button_AddClass_Delete);
+            this.panel3.Controls.Add(this.button_AddClass_Edit);
+            this.panel3.Controls.Add(this.button_AddClass_DoneEditing);
+            this.panel3.Location = new System.Drawing.Point(466, 404);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(478, 44);
+            this.panel3.TabIndex = 22;
             // 
             // button_AddClass_ViewClasses
             // 
@@ -157,14 +420,44 @@
             this.button_AddClass_ViewClasses.UseVisualStyleBackColor = true;
             this.button_AddClass_ViewClasses.Click += new System.EventHandler(this.button_AddClass_ViewClasses_Click);
             // 
-            // dataGridView2
+            // button_AddClass_Delete
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(466, 15);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(478, 383);
-            this.dataGridView2.TabIndex = 19;
+            this.button_AddClass_Delete.Location = new System.Drawing.Point(368, 9);
+            this.button_AddClass_Delete.Name = "button_AddClass_Delete";
+            this.button_AddClass_Delete.Size = new System.Drawing.Size(87, 23);
+            this.button_AddClass_Delete.TabIndex = 21;
+            this.button_AddClass_Delete.Text = "Delete";
+            this.button_AddClass_Delete.UseVisualStyleBackColor = true;
+            this.button_AddClass_Delete.Click += new System.EventHandler(this.button_AddClass_Delete_Click);
+            // 
+            // button_AddClass_Edit
+            // 
+            this.button_AddClass_Edit.Location = new System.Drawing.Point(262, 9);
+            this.button_AddClass_Edit.Name = "button_AddClass_Edit";
+            this.button_AddClass_Edit.Size = new System.Drawing.Size(87, 23);
+            this.button_AddClass_Edit.TabIndex = 21;
+            this.button_AddClass_Edit.Text = "Edit";
+            this.button_AddClass_Edit.UseVisualStyleBackColor = true;
+            this.button_AddClass_Edit.Click += new System.EventHandler(this.button_AddClass_Edit_Click);
+            // 
+            // button_AddClass_DoneEditing
+            // 
+            this.button_AddClass_DoneEditing.Location = new System.Drawing.Point(262, 9);
+            this.button_AddClass_DoneEditing.Name = "button_AddClass_DoneEditing";
+            this.button_AddClass_DoneEditing.Size = new System.Drawing.Size(87, 23);
+            this.button_AddClass_DoneEditing.TabIndex = 21;
+            this.button_AddClass_DoneEditing.Text = "Done Editing";
+            this.button_AddClass_DoneEditing.UseVisualStyleBackColor = true;
+            this.button_AddClass_DoneEditing.Click += new System.EventHandler(this.button_AddClass_DoneEditing_Click);
+            // 
+            // dataGridView_Class
+            // 
+            this.dataGridView_Class.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
+            this.dataGridView_Class.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Class.Location = new System.Drawing.Point(466, 15);
+            this.dataGridView_Class.Name = "dataGridView_Class";
+            this.dataGridView_Class.Size = new System.Drawing.Size(478, 383);
+            this.dataGridView_Class.TabIndex = 19;
             // 
             // panel2
             // 
@@ -503,47 +796,14 @@
             this.label_Logout.TabIndex = 1;
             this.label_Logout.Text = "Logout";
             // 
-            // button_AddClass_DoneEditing
+            // dataGridView_Professor
             // 
-            this.button_AddClass_DoneEditing.Location = new System.Drawing.Point(262, 9);
-            this.button_AddClass_DoneEditing.Name = "button_AddClass_DoneEditing";
-            this.button_AddClass_DoneEditing.Size = new System.Drawing.Size(87, 23);
-            this.button_AddClass_DoneEditing.TabIndex = 21;
-            this.button_AddClass_DoneEditing.Text = "Done Editing";
-            this.button_AddClass_DoneEditing.UseVisualStyleBackColor = true;
-            this.button_AddClass_DoneEditing.Click += new System.EventHandler(this.button_AddClass_DoneEditing_Click);
-            // 
-            // button_AddClass_Edit
-            // 
-            this.button_AddClass_Edit.Location = new System.Drawing.Point(262, 9);
-            this.button_AddClass_Edit.Name = "button_AddClass_Edit";
-            this.button_AddClass_Edit.Size = new System.Drawing.Size(87, 23);
-            this.button_AddClass_Edit.TabIndex = 21;
-            this.button_AddClass_Edit.Text = "Edit";
-            this.button_AddClass_Edit.UseVisualStyleBackColor = true;
-            this.button_AddClass_Edit.Click += new System.EventHandler(this.button_AddClass_Edit_Click);
-            // 
-            // button_AddClass_Delete
-            // 
-            this.button_AddClass_Delete.Location = new System.Drawing.Point(368, 9);
-            this.button_AddClass_Delete.Name = "button_AddClass_Delete";
-            this.button_AddClass_Delete.Size = new System.Drawing.Size(87, 23);
-            this.button_AddClass_Delete.TabIndex = 21;
-            this.button_AddClass_Delete.Text = "Delete";
-            this.button_AddClass_Delete.UseVisualStyleBackColor = true;
-            this.button_AddClass_Delete.Click += new System.EventHandler(this.button_AddClass_Delete_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
-            this.panel3.Controls.Add(this.button_AddClass_ViewClasses);
-            this.panel3.Controls.Add(this.button_AddClass_Delete);
-            this.panel3.Controls.Add(this.button_AddClass_Edit);
-            this.panel3.Controls.Add(this.button_AddClass_DoneEditing);
-            this.panel3.Location = new System.Drawing.Point(466, 404);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(478, 44);
-            this.panel3.TabIndex = 22;
+            this.dataGridView_Professor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
+            this.dataGridView_Professor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Professor.Location = new System.Drawing.Point(379, 18);
+            this.dataGridView_Professor.Name = "dataGridView_Professor";
+            this.dataGridView_Professor.Size = new System.Drawing.Size(566, 373);
+            this.dataGridView_Professor.TabIndex = 25;
             // 
             // AdminMain
             // 
@@ -558,8 +818,14 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Class)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -568,7 +834,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Sections)).EndInit();
-            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Professor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -613,10 +879,33 @@
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button_AddClass_ViewClasses;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView_Class;
         private System.Windows.Forms.Button button_AddClass_Delete;
         private System.Windows.Forms.Button button_AddClass_Edit;
         private System.Windows.Forms.Button button_AddClass_DoneEditing;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.CheckBox checkBox_OfficePhoneNumberNA;
+        private System.Windows.Forms.CheckBox checkBox_CellPhoneNumberNA;
+        private System.Windows.Forms.Button button_Submit;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox_OfficePhoneNumberRight;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox_CellPhoneNumberRight;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox_MsuIDRight;
+        private System.Windows.Forms.TextBox textBox_LastNameRight;
+        private System.Windows.Forms.TextBox textBox_OfficeRoomNumberRight;
+        private System.Windows.Forms.TextBox textBox_FirstNameRight;
+        private System.Windows.Forms.Label label_CellPhoneNumberLeft;
+        private System.Windows.Forms.Label label_OfficePhoneNumberLeft;
+        private System.Windows.Forms.Label label_MsuIDLeft;
+        private System.Windows.Forms.Label label_OfficeRoomNumberLeft;
+        private System.Windows.Forms.Label label_LastNameLeft;
+        private System.Windows.Forms.Label label_FirstNameLeft;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button button_AddProfessor_ViewProfessors;
+        private System.Windows.Forms.Button button_AddProfessor_Delete;
+        private System.Windows.Forms.Button button_AddProfessor_Edit;
+        private System.Windows.Forms.Button button_AddProfessor_DoneEditing;
+        private System.Windows.Forms.DataGridView dataGridView_Professor;
     }
 }
