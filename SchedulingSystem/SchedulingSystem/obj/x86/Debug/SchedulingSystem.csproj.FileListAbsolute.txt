@@ -78,3 +78,18 @@ C:\Users\Dylan\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\obj\
 C:\Users\Dylan\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\obj\x86\Debug\SchedulingSystem.UserMain.resources
 C:\Users\Dylan\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Dylan\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\MSU User\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\obj\x86\Debug\SchedulingSystem.exe
+C:\Users\MSU User\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\obj\x86\Debug\SchedulingSystem.pdb
+C:\Users\MSU User\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\bin\Debug\SchedulingSystem.exe
+C:\Users\MSU User\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\bin\Debug\SchedulingSystem.pdb
+C:\Users\MSU User\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\MSU User\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\obj\x86\Debug\SchedulingSystem.AddClass.resources
+C:\Users\MSU User\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\obj\x86\Debug\SchedulingSystem.AddProfessor.resources
+C:\Users\MSU User\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\obj\x86\Debug\SchedulingSystem.LogIn.resources
+C:\Users\MSU User\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\obj\x86\Debug\SchedulingSystem.AdminMain.resources
+C:\Users\MSU User\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\obj\x86\Debug\SchedulingSystem.ProfessorPreferences.resources
+C:\Users\MSU User\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\obj\x86\Debug\SchedulingSystem.Properties.Resources.resources
+C:\Users\MSU User\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\obj\x86\Debug\SchedulingSystem.Section_Details.resources
+C:\Users\MSU User\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\obj\x86\Debug\SchedulingSystem.UserMain.resources
+C:\Users\MSU User\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\MSU User\Documents\GitHub\Schedular\SchedulingSystem\SchedulingSystem\obj\x86\Debug\GenerateResource.write.1.tlog

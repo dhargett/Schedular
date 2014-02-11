@@ -30,7 +30,9 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox_ScheduleOptions = new System.Windows.Forms.GroupBox();
+            this.button_Schedule_ViewSchedule = new System.Windows.Forms.Button();
             this.dataGridView_Schedule = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView_Professor = new System.Windows.Forms.DataGridView();
@@ -92,12 +94,12 @@
             this.comboBox_Subject = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label_Logout = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.button_Schedule_button = new System.Windows.Forms.Button();
             this.button_Schedule_GenerateSchedule = new System.Windows.Forms.Button();
+            this.label_Logout = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.groupBox_ScheduleOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Schedule)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -114,7 +116,6 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Sections)).BeginInit();
             this.tabPage4.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -141,9 +142,18 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Schedule";
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
+            this.panel6.Controls.Add(this.groupBox_ScheduleOptions);
+            this.panel6.Location = new System.Drawing.Point(707, 6);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(240, 450);
+            this.panel6.TabIndex = 4;
+            // 
             // groupBox_ScheduleOptions
             // 
-            this.groupBox_ScheduleOptions.Controls.Add(this.button_Schedule_button);
+            this.groupBox_ScheduleOptions.Controls.Add(this.button_Schedule_ViewSchedule);
             this.groupBox_ScheduleOptions.ForeColor = System.Drawing.Color.White;
             this.groupBox_ScheduleOptions.Location = new System.Drawing.Point(12, 3);
             this.groupBox_ScheduleOptions.Name = "groupBox_ScheduleOptions";
@@ -152,8 +162,20 @@
             this.groupBox_ScheduleOptions.TabStop = false;
             this.groupBox_ScheduleOptions.Text = "Schedule Options";
             // 
+            // button_Schedule_ViewSchedule
+            // 
+            this.button_Schedule_ViewSchedule.ForeColor = System.Drawing.Color.Black;
+            this.button_Schedule_ViewSchedule.Location = new System.Drawing.Point(52, 29);
+            this.button_Schedule_ViewSchedule.Name = "button_Schedule_ViewSchedule";
+            this.button_Schedule_ViewSchedule.Size = new System.Drawing.Size(107, 23);
+            this.button_Schedule_ViewSchedule.TabIndex = 1;
+            this.button_Schedule_ViewSchedule.Text = "View Schedule";
+            this.button_Schedule_ViewSchedule.UseVisualStyleBackColor = true;
+            this.button_Schedule_ViewSchedule.Click += new System.EventHandler(this.button_Schedule_ViewSchedule_Click);
+            // 
             // dataGridView_Schedule
             // 
+            this.dataGridView_Schedule.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
             this.dataGridView_Schedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Schedule.Location = new System.Drawing.Point(12, 6);
             this.dataGridView_Schedule.Name = "dataGridView_Schedule";
@@ -795,13 +817,24 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.BackColor = System.Drawing.Color.Gold;
+            this.tabPage4.Controls.Add(this.button1);
             this.tabPage4.Controls.Add(this.button_Schedule_GenerateSchedule);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(962, 462);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Options";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.Text = " Options";
+            // 
+            // button_Schedule_GenerateSchedule
+            // 
+            this.button_Schedule_GenerateSchedule.ForeColor = System.Drawing.Color.Black;
+            this.button_Schedule_GenerateSchedule.Location = new System.Drawing.Point(735, 39);
+            this.button_Schedule_GenerateSchedule.Name = "button_Schedule_GenerateSchedule";
+            this.button_Schedule_GenerateSchedule.Size = new System.Drawing.Size(108, 23);
+            this.button_Schedule_GenerateSchedule.TabIndex = 1;
+            this.button_Schedule_GenerateSchedule.Text = "Generate Schedule";
+            this.button_Schedule_GenerateSchedule.UseVisualStyleBackColor = true;
             // 
             // label_Logout
             // 
@@ -813,36 +846,16 @@
             this.label_Logout.Size = new System.Drawing.Size(59, 20);
             this.label_Logout.TabIndex = 1;
             this.label_Logout.Text = "Logout";
+            this.label_Logout.Click += new System.EventHandler(this.label_Logout_Click);
             // 
-            // panel6
+            // button1
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
-            this.panel6.Controls.Add(this.groupBox_ScheduleOptions);
-            this.panel6.Location = new System.Drawing.Point(707, 6);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(240, 450);
-            this.panel6.TabIndex = 4;
-            // 
-            // button_Schedule_button
-            // 
-            this.button_Schedule_button.ForeColor = System.Drawing.Color.Black;
-            this.button_Schedule_button.Location = new System.Drawing.Point(52, 29);
-            this.button_Schedule_button.Name = "button_Schedule_button";
-            this.button_Schedule_button.Size = new System.Drawing.Size(107, 23);
-            this.button_Schedule_button.TabIndex = 1;
-            this.button_Schedule_button.Text = "View Schedule";
-            this.button_Schedule_button.UseVisualStyleBackColor = true;
-            this.button_Schedule_button.Click += new System.EventHandler(this.button_Schedule_button_Click);
-            // 
-            // button_Schedule_GenerateSchedule
-            // 
-            this.button_Schedule_GenerateSchedule.ForeColor = System.Drawing.Color.Black;
-            this.button_Schedule_GenerateSchedule.Location = new System.Drawing.Point(735, 39);
-            this.button_Schedule_GenerateSchedule.Name = "button_Schedule_GenerateSchedule";
-            this.button_Schedule_GenerateSchedule.Size = new System.Drawing.Size(108, 23);
-            this.button_Schedule_GenerateSchedule.TabIndex = 1;
-            this.button_Schedule_GenerateSchedule.Text = "Generate Schedule";
-            this.button_Schedule_GenerateSchedule.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(735, 68);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(108, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Archive Schedule";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // AdminMain
             // 
@@ -856,6 +869,7 @@
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.groupBox_ScheduleOptions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Schedule)).EndInit();
             this.tabPage2.ResumeLayout(false);
@@ -876,7 +890,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Sections)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -950,7 +963,8 @@
         private System.Windows.Forms.Button button_AddProfessor_DoneEditing;
         private System.Windows.Forms.DataGridView dataGridView_Professor;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button button_Schedule_button;
+        private System.Windows.Forms.Button button_Schedule_ViewSchedule;
         private System.Windows.Forms.Button button_Schedule_GenerateSchedule;
+        private System.Windows.Forms.Button button1;
     }
 }

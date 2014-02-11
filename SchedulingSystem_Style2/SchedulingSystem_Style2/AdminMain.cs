@@ -96,21 +96,23 @@ namespace SchedulingSystem_Style2
         private void button_AddClass_ViewClasses_Click(object sender, EventArgs e)
         {
             //
-            // View Faculty
+            // View Classes
             //
-
+            dataGridView_Class.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue;
             dataGridView_Class.Columns.Clear();
             dataGridView_Class.Rows.Clear();
 
             // Add Column headers
-            dataGridView_Class.Columns.Add("lastName", "Last Name");
-            dataGridView_Class.Columns.Add("firstName", "First Name");
-            dataGridView_Class.Columns.Add("officeNum", "Office #");
-            dataGridView_Class.Columns.Add("officePhoneNum", "Office Phone #");
-            dataGridView_Class.Columns.Add("mobilePhoneNum", "Mobile Phone #");
+            dataGridView_Class.Columns.Add("subject", "Subject");
+            dataGridView_Class.Columns.Add("classNum", "Class #");
+            dataGridView_Class.Columns.Add("section", "Section");
+            dataGridView_Class.Columns.Add("title", "Title");
+            dataGridView_Class.Columns.Add("professor", "Professor");
 
-            dataGridView_Class.Rows.Add("Ahmadi", "Dora", "LA 108", "555-5555", "444-4444");
-            dataGridView_Class.Rows.Add("Skaggs", "Duane", "LA 205B", "555-5555", "444-4444");
+
+            dataGridView_Class.Rows.Add("MATH", "152", "001", "College Algebra", "Chris Schroder");
+            dataGridView_Class.Rows.Add("CS", "170", "001", "Intro. to Computer Science", "Sherif Rashad");
+            dataGridView_Class.Rows.Add("MATH", "308", "001", "Discrete Mathematics", "Duane Skaggs");
 
 
             dataGridView_Class.ForeColor = Color.Black;
@@ -120,7 +122,6 @@ namespace SchedulingSystem_Style2
 
             button_AddClass_Edit.Visible = true;
             button_AddClass_Delete.Visible = true;
-
 
         }
 
@@ -202,7 +203,7 @@ namespace SchedulingSystem_Style2
             //
             // View Faculty
             //
-
+            dataGridView_Professor.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue;
             dataGridView_Professor.Columns.Clear();
             dataGridView_Professor.Rows.Clear();
 
@@ -228,6 +229,7 @@ namespace SchedulingSystem_Style2
 
             button_AddProfessor_Edit.Visible = true;
             button_AddProfessor_Delete.Visible = true;
+
         }
 
         private void button_AddProfessor_Edit_Click(object sender, EventArgs e)
@@ -296,14 +298,53 @@ namespace SchedulingSystem_Style2
             button_AddProfessor_Delete.Show();
         }
 
-        /* ///////////////////////////////////
-         * 
+        /* /////////////////////////////////// 
          *      Schedule
          * 
          *///////////////////////////////////
-        private void button_Schedule_button_Click(object sender, EventArgs e)
-        {
 
+        private void button_Schedule_ViewSchedule_Click(object sender, EventArgs e)
+        {
+            //
+            //  Create schedule
+            //
+            //button_Schedule_ViewSchedule.Hide();
+            dataGridView_Schedule.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue;
+            dataGridView_Schedule.Columns.Clear();
+            dataGridView_Schedule.Rows.Clear();
+
+            // Add Column headers
+            dataGridView_Schedule.Columns.Add("Room #", "Room #");
+            dataGridView_Schedule.Columns.Add("8", "8:00am");
+            dataGridView_Schedule.Columns.Add("9", "9:10");
+            dataGridView_Schedule.Columns.Add("10", "10:20");
+            dataGridView_Schedule.Columns.Add("11", "11:30am");
+            dataGridView_Schedule.Columns.Add("12", "12:40pm");
+            dataGridView_Schedule.Columns.Add("1", "1:50pm");
+            dataGridView_Schedule.Columns.Add("3", "3:00pm");
+
+            // Add items
+            dataGridView_Schedule.Rows.Add("Monday");
+            dataGridView_Schedule.Rows.Add("LA 101", "CS 170-001", "MATH 135 - 001", "PHYS 101", "MATH 175", "MATH 152", "CS 380");
+            dataGridView_Schedule.Rows.Add("LA 103", "data", "data", "data", "data", "data", "data");
+            dataGridView_Schedule.Rows.Add("LA 109", "data", "data", "data", "data", "data", "data");
+            dataGridView_Schedule.Rows.Add("Tuesday");
+            dataGridView_Schedule.Rows.Add("LA 101", "CS 170-001", "MATH 135 - 001", "PHYS 101", "MATH 175", "MATH 152", "CS 380");
+            dataGridView_Schedule.Rows.Add("LA 103", "data", "data", "data", "data", "data", "data");
+            dataGridView_Schedule.Rows.Add("LA 109", "data", "data", "data", "data", "data", "data");
+
+            // change day cells background colors to Red
+            dataGridView_Schedule.Rows[0].Cells[0].Style.BackColor = Color.Red;
+            dataGridView_Schedule.Rows[4].Cells[0].Style.BackColor = Color.Red;
+
+            dataGridView_Schedule.ForeColor = Color.Black;
+            dataGridView_Schedule.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            dataGridView_Schedule.ReadOnly = true;
+        }
+
+        private void label_Logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
