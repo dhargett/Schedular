@@ -18,7 +18,7 @@ namespace SchedulingSystem_Style2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "Admin" && maskedTextBox1.Text == "")
+            if (textBox1.Text == "Admin" && maskedTextBox1.Text == "9999")
             {
                 AdminMain adminMain = new AdminMain();
                 adminMain.Show();

@@ -21,6 +21,9 @@ namespace SchedulingSystem_Style2
             button_AddClass_Edit.Visible = false;
             button_AddClass_Delete.Visible = false;
             button_AddClass_DoneEditing.Visible = false;
+            button_AddProfessor_Edit.Visible = false;
+            button_AddProfessor_Delete.Visible = false;
+            button_AddProfessor_DoneEditing.Visible = false;
         }
 
         /*////////////////////////////////
@@ -200,40 +203,105 @@ namespace SchedulingSystem_Style2
             // View Faculty
             //
 
-            dataGridView_Class.Columns.Clear();
-            dataGridView_Class.Rows.Clear();
+            dataGridView_Professor.Columns.Clear();
+            dataGridView_Professor.Rows.Clear();
 
             // Add Column headers
-            dataGridView_Class.Columns.Add("lastName", "Last Name");
-            dataGridView_Class.Columns.Add("firstName", "First Name");
-            dataGridView_Class.Columns.Add("officeNum", "Office #");
-            dataGridView_Class.Columns.Add("officePhoneNum", "Office Phone #");
-            dataGridView_Class.Columns.Add("mobilePhoneNum", "Mobile Phone #");
+            dataGridView_Professor.Columns.Add("lastName", "Last Name");
+            dataGridView_Professor.Columns.Add("firstName", "First Name");
+            dataGridView_Professor.Columns.Add("officeNum", "Office #");
+            dataGridView_Professor.Columns.Add("officePhoneNum", "Office Phone #");
+            dataGridView_Professor.Columns.Add("mobilePhoneNum", "Mobile Phone #");
 
-            dataGridView_Class.Rows.Add("Ahmadi", "Dora", "LA 108", "555-5555", "444-4444");
-            dataGridView_Class.Rows.Add("Skaggs", "Duane", "LA 205B", "555-5555", "444-4444");
+            dataGridView_Professor.Rows.Add("Ahmadi", "Dora", "LA 108", "555-5555", "444-4444");
+            dataGridView_Professor.Rows.Add("Skaggs", "Duane", "LA 205B", "555-5555", "444-4444");
+            dataGridView_Professor.Rows.Add("O'Brien", "Tim", "LA 203A", "555-5555", "444-4444");
+            dataGridView_Professor.Rows.Add("Schroder", "Chris", "LA 203C", "555-5555", "444-4444");
+            dataGridView_Professor.Rows.Add("Cyrus", "Vivian", "LA 205D", "555-5555", "444-4444");
+            dataGridView_Professor.Rows.Add("Yes", "Capp", "LA 401B", "555-5555", "444-4444");
 
 
-            dataGridView_Class.ForeColor = Color.Black;
-            dataGridView_Class.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView_Class.ReadOnly = true;
+            dataGridView_Professor.ForeColor = Color.Black;
+            dataGridView_Professor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView_Professor.ReadOnly = true;
 
 
-            button_AddClass_Edit.Visible = true;
-            button_AddClass_Delete.Visible = true;
+            button_AddProfessor_Edit.Visible = true;
+            button_AddProfessor_Delete.Visible = true;
         }
 
         private void button_AddProfessor_Edit_Click(object sender, EventArgs e)
         {
+            button_AddProfessor_Edit.Hide();
+            button_AddProfessor_Delete.Hide();
+            button_AddProfessor_DoneEditing.Show();
 
+            if (dataGridView_Professor.SelectedRows.Count >= 1)
+            {
+
+                if (button_AddProfessor_DoneEditing.Visible == true)
+                {
+                    dataGridView_Professor.ReadOnly = false;
+                }
+
+                else
+                {
+                    MessageBox.Show("Error 1.13_2.5.3");
+                }
+            }
+
+            else
+            {
+                button_AddProfessor_Edit.Show();
+                MessageBox.Show("Please select a record to edit.");
+            }
         }
 
         private void button_AddProfessor_Delete_Click(object sender, EventArgs e)
         {
+            if (dataGridView_Professor.SelectedRows.Count > 0)
+            {
+                string message = "Do you wish to delete the selected record(s)?";
+                string caption = "Error";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNoCancel;
+                if (MessageBox.Show(message, caption, buttons) == DialogResult.Yes)
+                {
+                    int count = 0;
+                    dataGridView_Class.AllowUserToDeleteRows = true;
+                    foreach (DataGridViewRow row in dataGridView_Professor.SelectedRows)
+                    {
+                        if (!row.IsNewRow)
+                            dataGridView_Professor.Rows.Remove(row);
+                        count++;
+                    }
 
+                    MessageBox.Show(count + " record(s) deleted.");
+                }
+
+                else
+                {
+                    MessageBox.Show("0 records deleted."); // Error message. Numbers represent first letters in form and method
+                }                                        //   each seperated by an underscore.
+            }
+
+            else
+                MessageBox.Show("Please select a record to delete."); 
         }
 
         private void button_AddProfessor_DoneEditing_Click(object sender, EventArgs e)
+        {
+            button_AddProfessor_DoneEditing.Hide();
+            button_AddProfessor_Edit.Show();
+            dataGridView_Professor.ReadOnly = true;
+            button_AddProfessor_Delete.Show();
+        }
+
+        /* ///////////////////////////////////
+         * 
+         *      Schedule
+         * 
+         *///////////////////////////////////
+        private void button_Schedule_button_Click(object sender, EventArgs e)
         {
 
         }
