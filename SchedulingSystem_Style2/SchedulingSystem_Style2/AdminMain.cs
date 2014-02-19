@@ -309,6 +309,8 @@ namespace SchedulingSystem_Style2
             //  Create schedule
             //
             //button_Schedule_ViewSchedule.Hide();
+            pictureBox1.Hide();
+            label_Schedule_MCSPScheduler.Hide();
             dataGridView_Schedule.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue;
             dataGridView_Schedule.Columns.Clear();
             dataGridView_Schedule.Rows.Clear();
