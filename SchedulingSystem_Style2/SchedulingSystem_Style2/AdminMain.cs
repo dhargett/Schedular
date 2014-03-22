@@ -24,6 +24,7 @@ namespace SchedulingSystem_Style2
             button_AddProfessor_Edit.Visible = false;
             button_AddProfessor_Delete.Visible = false;
             button_AddProfessor_DoneEditing.Visible = false;
+            button_AddProfessor_ViewEditPreferences.Visible = false;
         }
 
         /*////////////////////////////////
@@ -98,6 +99,7 @@ namespace SchedulingSystem_Style2
             //
             // View Classes
             //
+            pictureBox_AddClass_Eagle.Hide(); // ADDED 3:07
             dataGridView_Class.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue;
             dataGridView_Class.Columns.Clear();
             dataGridView_Class.Rows.Clear();
@@ -200,6 +202,9 @@ namespace SchedulingSystem_Style2
 
         private void button_AddProfessor_ViewProfessors_Click(object sender, EventArgs e)
         {
+            button_AddProfessor_ViewProfessors.Text = "Refresh";
+            button_AddProfessor_ViewEditPreferences.Visible = true;
+            pictureBox_AddProfessor_Eagle.Visible = false;
             //
             // View Faculty
             //
@@ -219,7 +224,7 @@ namespace SchedulingSystem_Style2
             dataGridView_Professor.Rows.Add("O'Brien", "Tim", "LA 203A", "555-5555", "444-4444");
             dataGridView_Professor.Rows.Add("Schroder", "Chris", "LA 203C", "555-5555", "444-4444");
             dataGridView_Professor.Rows.Add("Cyrus", "Vivian", "LA 205D", "555-5555", "444-4444");
-            dataGridView_Professor.Rows.Add("Yes", "Capp", "LA 401B", "555-5555", "444-4444");
+            dataGridView_Professor.Rows.Add("Yess", "Capp", "LA 401B", "555-5555", "444-4444");
 
 
             dataGridView_Professor.ForeColor = Color.Black;
@@ -309,6 +314,8 @@ namespace SchedulingSystem_Style2
             //  Create schedule
             //
             //button_Schedule_ViewSchedule.Hide();
+            pictureBox1.Hide();
+            label_Schedule_MCSPScheduler.Hide();
             dataGridView_Schedule.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue;
             dataGridView_Schedule.Columns.Clear();
             dataGridView_Schedule.Rows.Clear();
@@ -332,10 +339,31 @@ namespace SchedulingSystem_Style2
             dataGridView_Schedule.Rows.Add("LA 101", "CS 170-001", "MATH 135 - 001", "PHYS 101", "MATH 175", "MATH 152", "CS 380");
             dataGridView_Schedule.Rows.Add("LA 103", "data", "data", "data", "data", "data", "data");
             dataGridView_Schedule.Rows.Add("LA 109", "data", "data", "data", "data", "data", "data");
+            dataGridView_Schedule.Rows.Add("Wednesday");
+            dataGridView_Schedule.Rows.Add("LA 101", "CS 170-001", "MATH 135 - 001", "PHYS 101", "MATH 175", "MATH 152", "CS 380");
+            dataGridView_Schedule.Rows.Add("LA 103", "data", "data", "data", "data", "data", "data");
+            dataGridView_Schedule.Rows.Add("LA 109", "data", "data", "data", "data", "data", "data");
+            dataGridView_Schedule.Rows.Add("Thursday");
+            dataGridView_Schedule.Rows.Add("LA 101", "CS 170-001", "MATH 135 - 001", "PHYS 101", "MATH 175", "MATH 152", "CS 380");
+            dataGridView_Schedule.Rows.Add("LA 103", "data", "data", "data", "data", "data", "data");
+            dataGridView_Schedule.Rows.Add("LA 109", "data", "data", "data", "data", "data", "data");
+            dataGridView_Schedule.Rows.Add("Friday 1");
+            dataGridView_Schedule.Rows.Add("LA 101", "CS 170-001", "MATH 135 - 001", "PHYS 101", "MATH 175", "MATH 152", "CS 380");
+            dataGridView_Schedule.Rows.Add("LA 103", "data", "data", "data", "data", "data", "data");
+            dataGridView_Schedule.Rows.Add("LA 109", "data", "data", "data", "data", "data", "data");
+            dataGridView_Schedule.Rows.Add("Friday 2");
+            dataGridView_Schedule.Rows.Add("LA 101", "CS 170-001", "MATH 135 - 001", "PHYS 101", "MATH 175", "MATH 152", "CS 380");
+            dataGridView_Schedule.Rows.Add("LA 103", "data", "data", "data", "data", "data", "data");
+            dataGridView_Schedule.Rows.Add("LA 109", "data", "data", "data", "data", "data", "data");
 
             // change day cells background colors to Red
             dataGridView_Schedule.Rows[0].Cells[0].Style.BackColor = Color.Red;
             dataGridView_Schedule.Rows[4].Cells[0].Style.BackColor = Color.Red;
+            dataGridView_Schedule.Rows[8].Cells[0].Style.BackColor = Color.Red;
+            dataGridView_Schedule.Rows[12].Cells[0].Style.BackColor = Color.Red;
+            dataGridView_Schedule.Rows[16].Cells[0].Style.BackColor = Color.Red;
+            dataGridView_Schedule.Rows[20].Cells[0].Style.BackColor = Color.Red;
+
 
             dataGridView_Schedule.ForeColor = Color.Black;
             dataGridView_Schedule.SelectionMode = DataGridViewSelectionMode.CellSelect;
@@ -345,6 +373,24 @@ namespace SchedulingSystem_Style2
         private void label_Logout_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button_AddProfessor_ViewEditPreferences_Click(object sender, EventArgs e)
+        {
+            button_AddProfessor_ViewEditPreferences.Visible = false;
+            dataGridView_Schedule.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue;
+            dataGridView_Professor.Columns.Clear();
+            dataGridView_Professor.Rows.Clear();
+
+            // Add Column headers
+            dataGridView_Professor.Columns.Add("Preferred times", "Preferred Time(s)");
+            dataGridView_Professor.Columns.Add("Excludes times", "Excluded Time(s)");
+            dataGridView_Professor.Columns.Add("Preferred classes", "Preferred Class(es)");
+            dataGridView_Professor.Columns.Add("ITV", "ITV Classes");
+            dataGridView_Professor.Columns.Add("Online", "Online");
+
+            // Add Rows
+            dataGridView_Professor.Rows.Add("Any", "10:20", "CS 170", "No", "No");
         }
     }
 }
