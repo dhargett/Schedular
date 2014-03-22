@@ -127,8 +127,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button_Schedule_GenerateSchedule = new System.Windows.Forms.Button();
             this.label_Logout = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.pictureBox_AddProfessor_Eagle = new System.Windows.Forms.PictureBox();
             this.pictureBox_AddClass_Eagle = new System.Windows.Forms.PictureBox();
+=======
+            this.label_Schedule_MCSPScheduler = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+>>>>>>> 928231cf1ce8907230f39b837b9242d6dd63606a
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -154,8 +159,12 @@
             this.tabPage5.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage6.SuspendLayout();
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AddProfessor_Eagle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AddClass_Eagle)).BeginInit();
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+>>>>>>> 928231cf1ce8907230f39b837b9242d6dd63606a
             this.SuspendLayout();
             // 
             // tabControl1
@@ -174,8 +183,12 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Gold;
             this.tabPage1.Controls.Add(this.label_Schedule_MCSPScheduler);
+<<<<<<< HEAD
             this.tabPage1.Controls.Add(this.pictureBox1);
+=======
+>>>>>>> 928231cf1ce8907230f39b837b9242d6dd63606a
             this.tabPage1.Controls.Add(this.panel6);
+            this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.dataGridView_Schedule);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -1192,6 +1205,7 @@
             this.label_Logout.Text = "Logout";
             this.label_Logout.Click += new System.EventHandler(this.label_Logout_Click);
             // 
+<<<<<<< HEAD
             // pictureBox_AddProfessor_Eagle
             // 
             this.pictureBox_AddProfessor_Eagle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
@@ -1211,6 +1225,29 @@
             this.pictureBox_AddClass_Eagle.Size = new System.Drawing.Size(294, 295);
             this.pictureBox_AddClass_Eagle.TabIndex = 27;
             this.pictureBox_AddClass_Eagle.TabStop = false;
+=======
+            // label_Schedule_MCSPScheduler
+            // 
+            this.label_Schedule_MCSPScheduler.AutoSize = true;
+            this.label_Schedule_MCSPScheduler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
+            this.label_Schedule_MCSPScheduler.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Schedule_MCSPScheduler.ForeColor = System.Drawing.Color.Gold;
+            this.label_Schedule_MCSPScheduler.Location = new System.Drawing.Point(254, 285);
+            this.label_Schedule_MCSPScheduler.Name = "label_Schedule_MCSPScheduler";
+            this.label_Schedule_MCSPScheduler.Size = new System.Drawing.Size(319, 42);
+            this.label_Schedule_MCSPScheduler.TabIndex = 8;
+            this.label_Schedule_MCSPScheduler.Text = "MCSP Scheduler";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(62, 50);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(568, 352);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+>>>>>>> 928231cf1ce8907230f39b837b9242d6dd63606a
             // 
             // AdminMain
             // 
@@ -1225,7 +1262,10 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+=======
+>>>>>>> 928231cf1ce8907230f39b837b9242d6dd63606a
             this.panel6.ResumeLayout(false);
             this.groupBox_ScheduleOptions.ResumeLayout(false);
             this.groupBox_ScheduleOptions.PerformLayout();
@@ -1256,8 +1296,12 @@
             this.tabPage7.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AddProfessor_Eagle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AddClass_Eagle)).EndInit();
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+>>>>>>> 928231cf1ce8907230f39b837b9242d6dd63606a
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1356,6 +1400,7 @@
         private System.Windows.Forms.Button button_Options_ProfessorTab_SpecificProfessorGenerate;
         private System.Windows.Forms.Label label_Schedule_MCSPScheduler;
         private System.Windows.Forms.PictureBox pictureBox1;
+<<<<<<< HEAD
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label19;
@@ -1365,5 +1410,7 @@
         private System.Windows.Forms.Button button_AddProfessor_ViewEditPreferences;
         private System.Windows.Forms.PictureBox pictureBox_AddProfessor_Eagle;
         private System.Windows.Forms.PictureBox pictureBox_AddClass_Eagle;
+=======
+>>>>>>> 928231cf1ce8907230f39b837b9242d6dd63606a
     }
 }
