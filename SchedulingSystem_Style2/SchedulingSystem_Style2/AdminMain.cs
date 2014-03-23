@@ -392,5 +392,12 @@ namespace SchedulingSystem_Style2
             // Add Rows
             dataGridView_Professor.Rows.Add("Any", "10:20", "CS 170", "No", "No");
         }
+
+        private void AdminMain_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'mCSP_SchedulerDataSet.Professor' table. You can move, or remove it, as needed.
+            this.professorTableAdapter.Fill(this.mCSP_SchedulerDataSet.Professor);
+
+        }
     }
 }
