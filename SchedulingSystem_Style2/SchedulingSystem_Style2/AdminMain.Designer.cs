@@ -471,6 +471,7 @@
             this.button_Submit.TabIndex = 3;
             this.button_Submit.Text = "Submit";
             this.button_Submit.UseVisualStyleBackColor = true;
+            this.button_Submit.Click += new System.EventHandler(this.button_Submit_Click);
             // 
             // maskedTextBox_OfficePhoneNumberRight
             // 
@@ -686,7 +687,6 @@
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(97, 21);
             this.comboBox4.TabIndex = 21;
-            this.comboBox4.Text = "Select Professor";
             // 
             // professorBindingSource
             // 

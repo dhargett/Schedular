@@ -1015,9 +1015,11 @@ namespace SchedulingSystem_Style2 {
             
             private global::System.Data.DataColumn columnOfficeNumber;
             
-            private global::System.Data.DataColumn columnPhoneNumber;
-            
             private global::System.Data.DataColumn columnFullName;
+            
+            private global::System.Data.DataColumn columnCellPhoneNumber;
+            
+            private global::System.Data.DataColumn columnOfficePhoneNumber;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1086,17 +1088,25 @@ namespace SchedulingSystem_Style2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PhoneNumberColumn {
+            public global::System.Data.DataColumn FullNameColumn {
                 get {
-                    return this.columnPhoneNumber;
+                    return this.columnFullName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FullNameColumn {
+            public global::System.Data.DataColumn CellPhoneNumberColumn {
                 get {
-                    return this.columnFullName;
+                    return this.columnCellPhoneNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OfficePhoneNumberColumn {
+                get {
+                    return this.columnOfficePhoneNumber;
                 }
             }
             
@@ -1137,15 +1147,16 @@ namespace SchedulingSystem_Style2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ProfessorRow AddProfessorRow(int ProfessorID, string FirstName, string LastName, string OfficeNumber, string PhoneNumber, string FullName) {
+            public ProfessorRow AddProfessorRow(int ProfessorID, string FirstName, string LastName, string OfficeNumber, string FullName, string CellPhoneNumber, string OfficePhoneNumber) {
                 ProfessorRow rowProfessorRow = ((ProfessorRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ProfessorID,
                         FirstName,
                         LastName,
                         OfficeNumber,
-                        PhoneNumber,
-                        FullName};
+                        FullName,
+                        CellPhoneNumber,
+                        OfficePhoneNumber};
                 rowProfessorRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProfessorRow);
                 return rowProfessorRow;
@@ -1179,8 +1190,9 @@ namespace SchedulingSystem_Style2 {
                 this.columnFirstName = base.Columns["FirstName"];
                 this.columnLastName = base.Columns["LastName"];
                 this.columnOfficeNumber = base.Columns["OfficeNumber"];
-                this.columnPhoneNumber = base.Columns["PhoneNumber"];
                 this.columnFullName = base.Columns["FullName"];
+                this.columnCellPhoneNumber = base.Columns["CellPhoneNumber"];
+                this.columnOfficePhoneNumber = base.Columns["OfficePhoneNumber"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1194,10 +1206,12 @@ namespace SchedulingSystem_Style2 {
                 base.Columns.Add(this.columnLastName);
                 this.columnOfficeNumber = new global::System.Data.DataColumn("OfficeNumber", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOfficeNumber);
-                this.columnPhoneNumber = new global::System.Data.DataColumn("PhoneNumber", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPhoneNumber);
                 this.columnFullName = new global::System.Data.DataColumn("FullName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFullName);
+                this.columnCellPhoneNumber = new global::System.Data.DataColumn("CellPhoneNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCellPhoneNumber);
+                this.columnOfficePhoneNumber = new global::System.Data.DataColumn("OfficePhoneNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOfficePhoneNumber);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnProfessorID}, true));
                 this.columnProfessorID.AllowDBNull = false;
@@ -1205,8 +1219,9 @@ namespace SchedulingSystem_Style2 {
                 this.columnFirstName.MaxLength = 50;
                 this.columnLastName.MaxLength = 50;
                 this.columnOfficeNumber.MaxLength = 10;
-                this.columnPhoneNumber.MaxLength = 2147483647;
                 this.columnFullName.MaxLength = 50;
+                this.columnCellPhoneNumber.MaxLength = 2147483647;
+                this.columnOfficePhoneNumber.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1985,22 +2000,6 @@ namespace SchedulingSystem_Style2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PhoneNumber {
-                get {
-                    try {
-                        return ((string)(this[this.tableProfessor.PhoneNumberColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PhoneNumber\' in table \'Professor\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableProfessor.PhoneNumberColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string FullName {
                 get {
                     try {
@@ -2012,6 +2011,38 @@ namespace SchedulingSystem_Style2 {
                 }
                 set {
                     this[this.tableProfessor.FullNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CellPhoneNumber {
+                get {
+                    try {
+                        return ((string)(this[this.tableProfessor.CellPhoneNumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CellPhoneNumber\' in table \'Professor\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProfessor.CellPhoneNumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string OfficePhoneNumber {
+                get {
+                    try {
+                        return ((string)(this[this.tableProfessor.OfficePhoneNumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OfficePhoneNumber\' in table \'Professor\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProfessor.OfficePhoneNumberColumn] = value;
                 }
             }
             
@@ -2053,18 +2084,6 @@ namespace SchedulingSystem_Style2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPhoneNumberNull() {
-                return this.IsNull(this.tableProfessor.PhoneNumberColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPhoneNumberNull() {
-                this[this.tableProfessor.PhoneNumberColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsFullNameNull() {
                 return this.IsNull(this.tableProfessor.FullNameColumn);
             }
@@ -2073,6 +2092,30 @@ namespace SchedulingSystem_Style2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetFullNameNull() {
                 this[this.tableProfessor.FullNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCellPhoneNumberNull() {
+                return this.IsNull(this.tableProfessor.CellPhoneNumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCellPhoneNumberNull() {
+                this[this.tableProfessor.CellPhoneNumberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOfficePhoneNumberNull() {
+                return this.IsNull(this.tableProfessor.OfficePhoneNumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOfficePhoneNumberNull() {
+                this[this.tableProfessor.OfficePhoneNumberColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3303,8 +3346,9 @@ SELECT Subject, CourseNumber, CourseTitle, NumberOfSections, Description FROM Co
             tableMapping.ColumnMappings.Add("FirstName", "FirstName");
             tableMapping.ColumnMappings.Add("LastName", "LastName");
             tableMapping.ColumnMappings.Add("OfficeNumber", "OfficeNumber");
-            tableMapping.ColumnMappings.Add("PhoneNumber", "PhoneNumber");
             tableMapping.ColumnMappings.Add("FullName", "FullName");
+            tableMapping.ColumnMappings.Add("CellPhoneNumber", "CellPhoneNumber");
+            tableMapping.ColumnMappings.Add("OfficePhoneNumber", "OfficePhoneNumber");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -3321,26 +3365,28 @@ SELECT Subject, CourseNumber, CourseTitle, NumberOfSections, Description FROM Co
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FullName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FullName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Professor] ([ProfessorID], [FirstName], [LastName], [OfficeNumber], [PhoneNumber], [FullName]) VALUES (@ProfessorID, @FirstName, @LastName, @OfficeNumber, @PhoneNumber, @FullName);
-SELECT ProfessorID, FirstName, LastName, OfficeNumber, PhoneNumber, FullName FROM Professor WHERE (ProfessorID = @ProfessorID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Professor] ([ProfessorID], [FirstName], [LastName], [OfficeNumber], [FullName], [CellPhoneNumber], [OfficePhoneNumber]) VALUES (@ProfessorID, @FirstName, @LastName, @OfficeNumber, @FullName, @CellPhoneNumber, @OfficePhoneNumber);
+SELECT ProfessorID, FirstName, LastName, OfficeNumber, FullName, CellPhoneNumber, OfficePhoneNumber FROM Professor WHERE (ProfessorID = @ProfessorID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProfessorID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProfessorID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OfficeNumber", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OfficeNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PhoneNumber", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FullName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FullName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CellPhoneNumber", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CellPhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OfficePhoneNumber", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OfficePhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Professor] SET [ProfessorID] = @ProfessorID, [FirstName] = @FirstName, [LastName] = @LastName, [OfficeNumber] = @OfficeNumber, [PhoneNumber] = @PhoneNumber, [FullName] = @FullName WHERE (([ProfessorID] = @Original_ProfessorID) AND ((@IsNull_FirstName = 1 AND [FirstName] IS NULL) OR ([FirstName] = @Original_FirstName)) AND ((@IsNull_LastName = 1 AND [LastName] IS NULL) OR ([LastName] = @Original_LastName)) AND ((@IsNull_OfficeNumber = 1 AND [OfficeNumber] IS NULL) OR ([OfficeNumber] = @Original_OfficeNumber)) AND ((@IsNull_FullName = 1 AND [FullName] IS NULL) OR ([FullName] = @Original_FullName)));
-SELECT ProfessorID, FirstName, LastName, OfficeNumber, PhoneNumber, FullName FROM Professor WHERE (ProfessorID = @ProfessorID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Professor] SET [ProfessorID] = @ProfessorID, [FirstName] = @FirstName, [LastName] = @LastName, [OfficeNumber] = @OfficeNumber, [FullName] = @FullName, [CellPhoneNumber] = @CellPhoneNumber, [OfficePhoneNumber] = @OfficePhoneNumber WHERE (([ProfessorID] = @Original_ProfessorID) AND ((@IsNull_FirstName = 1 AND [FirstName] IS NULL) OR ([FirstName] = @Original_FirstName)) AND ((@IsNull_LastName = 1 AND [LastName] IS NULL) OR ([LastName] = @Original_LastName)) AND ((@IsNull_OfficeNumber = 1 AND [OfficeNumber] IS NULL) OR ([OfficeNumber] = @Original_OfficeNumber)) AND ((@IsNull_FullName = 1 AND [FullName] IS NULL) OR ([FullName] = @Original_FullName)));
+SELECT ProfessorID, FirstName, LastName, OfficeNumber, FullName, CellPhoneNumber, OfficePhoneNumber FROM Professor WHERE (ProfessorID = @ProfessorID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProfessorID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProfessorID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OfficeNumber", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OfficeNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PhoneNumber", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FullName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FullName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CellPhoneNumber", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CellPhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OfficePhoneNumber", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OfficePhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProfessorID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProfessorID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FirstName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FirstName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3365,8 +3411,8 @@ SELECT ProfessorID, FirstName, LastName, OfficeNumber, PhoneNumber, FullName FRO
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ProfessorID, FirstName, LastName, OfficeNumber, PhoneNumber, FullName FROM" +
-                " Professor";
+            this._commandCollection[0].CommandText = "SELECT ProfessorID, FirstName, LastName, OfficeNumber, FullName, CellPhoneNumber," +
+                " OfficePhoneNumber FROM Professor";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3481,7 +3527,7 @@ SELECT ProfessorID, FirstName, LastName, OfficeNumber, PhoneNumber, FullName FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ProfessorID, string FirstName, string LastName, string OfficeNumber, string PhoneNumber, string FullName) {
+        public virtual int Insert(int ProfessorID, string FirstName, string LastName, string OfficeNumber, string FullName, string CellPhoneNumber, string OfficePhoneNumber) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ProfessorID));
             if ((FirstName == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -3501,17 +3547,23 @@ SELECT ProfessorID, FirstName, LastName, OfficeNumber, PhoneNumber, FullName FRO
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(OfficeNumber));
             }
-            if ((PhoneNumber == null)) {
+            if ((FullName == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(PhoneNumber));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(FullName));
             }
-            if ((FullName == null)) {
+            if ((CellPhoneNumber == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(FullName));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(CellPhoneNumber));
+            }
+            if ((OfficePhoneNumber == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(OfficePhoneNumber));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3533,7 +3585,7 @@ SELECT ProfessorID, FirstName, LastName, OfficeNumber, PhoneNumber, FullName FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ProfessorID, string FirstName, string LastName, string OfficeNumber, string PhoneNumber, string FullName, int Original_ProfessorID, string Original_FirstName, string Original_LastName, string Original_OfficeNumber, string Original_FullName) {
+        public virtual int Update(int ProfessorID, string FirstName, string LastName, string OfficeNumber, string FullName, string CellPhoneNumber, string OfficePhoneNumber, int Original_ProfessorID, string Original_FirstName, string Original_LastName, string Original_OfficeNumber, string Original_FullName) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ProfessorID));
             if ((FirstName == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -3553,50 +3605,56 @@ SELECT ProfessorID, FirstName, LastName, OfficeNumber, PhoneNumber, FullName FRO
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(OfficeNumber));
             }
-            if ((PhoneNumber == null)) {
+            if ((FullName == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(PhoneNumber));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(FullName));
             }
-            if ((FullName == null)) {
+            if ((CellPhoneNumber == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(FullName));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(CellPhoneNumber));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ProfessorID));
-            if ((Original_FirstName == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            if ((OfficePhoneNumber == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_FirstName));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(OfficePhoneNumber));
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ProfessorID));
+            if ((Original_FirstName == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_FirstName));
             }
             if ((Original_LastName == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_LastName));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_LastName));
             }
             if ((Original_OfficeNumber == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_OfficeNumber));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_OfficeNumber));
             }
             if ((Original_FullName == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_FullName));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_FullName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3618,8 +3676,8 @@ SELECT ProfessorID, FirstName, LastName, OfficeNumber, PhoneNumber, FullName FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string FirstName, string LastName, string OfficeNumber, string PhoneNumber, string FullName, int Original_ProfessorID, string Original_FirstName, string Original_LastName, string Original_OfficeNumber, string Original_FullName) {
-            return this.Update(Original_ProfessorID, FirstName, LastName, OfficeNumber, PhoneNumber, FullName, Original_ProfessorID, Original_FirstName, Original_LastName, Original_OfficeNumber, Original_FullName);
+        public virtual int Update(string FirstName, string LastName, string OfficeNumber, string FullName, string CellPhoneNumber, string OfficePhoneNumber, int Original_ProfessorID, string Original_FirstName, string Original_LastName, string Original_OfficeNumber, string Original_FullName) {
+            return this.Update(Original_ProfessorID, FirstName, LastName, OfficeNumber, FullName, CellPhoneNumber, OfficePhoneNumber, Original_ProfessorID, Original_FirstName, Original_LastName, Original_OfficeNumber, Original_FullName);
         }
     }
     

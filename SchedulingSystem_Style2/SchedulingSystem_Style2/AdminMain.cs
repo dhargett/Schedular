@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.OleDb;
+using System.Data.SqlClient;
 
 namespace SchedulingSystem_Style2
 {
@@ -397,6 +399,40 @@ namespace SchedulingSystem_Style2
         {
             // TODO: This line of code loads data into the 'mCSP_SchedulerDataSet.Professor' table. You can move, or remove it, as needed.
             this.professorTableAdapter.Fill(this.mCSP_SchedulerDataSet.Professor);
+
+        }
+
+        private void button_Submit_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Complete 1");
+            string professorID = maskedTextBox_MsuIDRight.Text;
+            string firstName = textBox_FirstNameRight.Text;
+            string lastName = textBox_LastNameRight.Text;
+            string officeNumber = textBox_OfficeRoomNumberRight.Text;
+            string fullName = firstName + " " + lastName;
+            string officePhoneNumber = maskedTextBox_OfficePhoneNumberRight.Text;
+            string cellPhoneNumber = maskedTextBox_CellPhoneNumberRight.Text;
+
+            SqlConnection sqlCon = new SqlConnection(@"Data Source=DYLAN-PC\DYLAN;Initial Catalog=MCSP_Scheduler;Integrated Security=True");
+
+            SqlCommand insertProfessorInfo = new SqlCommand("INSERT INTO dbo.Professor(ProfessorID, FirstName, LastName, OfficeNumber, CellPhoneNumber, OfficePhoneNumber, FullName) VALUES ('" + professorID + "','" + firstName + "', '" + lastName + "', '" + officeNumber + "', '" + cellPhoneNumber + "', '" + officePhoneNumber + "', '" + fullName + "');", sqlCon);
+
+            try
+            {
+                MessageBox.Show("Complete 2");
+                sqlCon.Open();
+                MessageBox.Show("Complete3");
+                insertProfessorInfo.ExecuteNonQuery();
+                MessageBox.Show("Complete4");
+                sqlCon.Close();
+                MessageBox.Show("Complete 5");
+            }
+
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            
 
         }
     }
