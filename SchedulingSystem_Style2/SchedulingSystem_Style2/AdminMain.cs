@@ -27,6 +27,9 @@ namespace SchedulingSystem_Style2
             button_AddProfessor_Delete.Visible = false;
             button_AddProfessor_DoneEditing.Visible = false;
             button_AddProfessor_ViewEditPreferences.Visible = false;
+            dataGridView_Class.AllowUserToAddRows = false;
+            dataGridView_Professor.AllowUserToAddRows = false;
+            dataGridView_Schedule.AllowUserToAddRows = false;
         }
 
         /*////////////////////////////////
@@ -214,7 +217,30 @@ namespace SchedulingSystem_Style2
             dataGridView_Professor.Columns.Clear();
             dataGridView_Professor.Rows.Clear();
 
-            // Add Column headers
+            SqlConnection sqlCon = new SqlConnection(@"Data Source=DYLAN-PC\DYLAN;Initial Catalog=MCSP_Scheduler;Integrated Security=True");
+            //SqlCommand loadProfessorList = new SqlCommand("SELECT * FROM Professor", sqlCon);
+
+
+            try
+            {
+                sqlCon.Open();
+                
+                SqlDataAdapter loadProfessorList = new SqlDataAdapter("SELECT * FROM Professor", sqlCon);
+                DataTable dt = new DataTable();
+                loadProfessorList.Fill(dt);
+                dataGridView_Professor.DataSource = dt;
+                
+                sqlCon.Close();
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("In Exception"); // DELETE
+                MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+           /* // Add Column headers
             dataGridView_Professor.Columns.Add("lastName", "Last Name");
             dataGridView_Professor.Columns.Add("firstName", "First Name");
             dataGridView_Professor.Columns.Add("officeNum", "Office #");
@@ -226,7 +252,7 @@ namespace SchedulingSystem_Style2
             dataGridView_Professor.Rows.Add("O'Brien", "Tim", "LA 203A", "555-5555", "444-4444");
             dataGridView_Professor.Rows.Add("Schroder", "Chris", "LA 203C", "555-5555", "444-4444");
             dataGridView_Professor.Rows.Add("Cyrus", "Vivian", "LA 205D", "555-5555", "444-4444");
-            dataGridView_Professor.Rows.Add("Yess", "Capp", "LA 401B", "555-5555", "444-4444");
+            dataGridView_Professor.Rows.Add("Yess", "Capp", "LA 401B", "555-5555", "444-4444");*/
 
 
             dataGridView_Professor.ForeColor = Color.Black;
