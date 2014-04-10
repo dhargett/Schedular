@@ -390,7 +390,7 @@
             // 
             // button_AddProfessor_Edit
             // 
-            this.button_AddProfessor_Edit.Location = new System.Drawing.Point(359, 9);
+            this.button_AddProfessor_Edit.Location = new System.Drawing.Point(266, 9);
             this.button_AddProfessor_Edit.Name = "button_AddProfessor_Edit";
             this.button_AddProfessor_Edit.Size = new System.Drawing.Size(87, 23);
             this.button_AddProfessor_Edit.TabIndex = 21;

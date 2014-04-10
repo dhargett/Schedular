@@ -110,7 +110,7 @@ namespace SchedulingSystem_Style2
             dataGridView_Class.Rows.Clear();
 
             // Add Column headers
-            dataGridView_Class.Columns.Add("subject", "Subject");
+            /*dataGridView_Class.Columns.Add("subject", "Subject");
             dataGridView_Class.Columns.Add("classNum", "Class #");
             dataGridView_Class.Columns.Add("section", "Section");
             dataGridView_Class.Columns.Add("title", "Title");
@@ -120,7 +120,16 @@ namespace SchedulingSystem_Style2
             dataGridView_Class.Rows.Add("MATH", "152", "001", "College Algebra", "Chris Schroder");
             dataGridView_Class.Rows.Add("CS", "170", "001", "Intro. to Computer Science", "Sherif Rashad");
             dataGridView_Class.Rows.Add("MATH", "308", "001", "Discrete Mathematics", "Duane Skaggs");
+            */
+            SqlConnection sqlCon = new SqlConnection(@"Data Source=DYLAN-PC\DYLAN;Initial Catalog=MCSP_Scheduler;Integrated Security=True");
+            sqlCon.Open();
 
+            SqlDataAdapter loadSectionList = new SqlDataAdapter("SELECT * FROM Section", sqlCon);
+            DataTable dt = new DataTable();
+            loadSectionList.Fill(dt);
+            dataGridView_Class.DataSource = dt;
+
+            sqlCon.Close(); 
 
             dataGridView_Class.ForeColor = Color.Black;
             dataGridView_Class.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -214,8 +223,8 @@ namespace SchedulingSystem_Style2
             // View Faculty
             //
             dataGridView_Professor.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue;
-            dataGridView_Professor.Columns.Clear();
-            dataGridView_Professor.Rows.Clear();
+            dataGridView_Professor.Refresh();
+            dataGridView_Professor.Refresh();
 
             SqlConnection sqlCon = new SqlConnection(@"Data Source=DYLAN-PC\DYLAN;Initial Catalog=MCSP_Scheduler;Integrated Security=True");
             //SqlCommand loadProfessorList = new SqlCommand("SELECT * FROM Professor", sqlCon);
@@ -223,6 +232,8 @@ namespace SchedulingSystem_Style2
 
             try
             {
+                //dataGridView_Professor.Columns.Clear();
+                //dataGridView_Professor.Rows.Clear();
                 sqlCon.Open();
                 
                 SqlDataAdapter loadProfessorList = new SqlDataAdapter("SELECT * FROM Professor", sqlCon);
@@ -329,6 +340,60 @@ namespace SchedulingSystem_Style2
             button_AddProfessor_Edit.Show();
             dataGridView_Professor.ReadOnly = true;
             button_AddProfessor_Delete.Show();
+            SqlConnection sqlCon = new SqlConnection(@"Data Source=DYLAN-PC\DYLAN;Initial Catalog=MCSP_Scheduler;Integrated Security=True");
+            //string professorID = "";
+            string firstName = "";
+            string lastName = "";
+            string officeNumber = "";
+            string cellPhoneNumber = "";
+            string officePhoneNumber = "";
+            string fullName = "";
+            int i = 0;
+            SqlCommand updateProfessorInfo = new SqlCommand
+                        ("UPDATE dbo.Professor " +
+                         "SET Professor.FirstName = " + firstName + ", Professor.LastName = " + lastName + ", Professor.OfficeNumber = " + officeNumber + ", Professor.CellPhoneNumber = " + cellPhoneNumber + ", Professor.OfficePhoneNumber =" + officePhoneNumber + ", Professor.FullName = " + fullName +
+                         " WHERE Professor.ProfessorID = " + dataGridView_Professor.Rows[i].Cells[0] + ";", sqlCon);
+            /*SqlCommand test = new SqlCommand("UPDATE dbo.Professor " +
+                         "SET Professor.FirstName = 'Duane' WHERE Professor.ProfessorID = 1;", sqlCon1);*/
+            try
+            {
+                //Professor.ProfessorID = " + professorID + ", 
+                sqlCon.Open();
+                //MessageBox.Show("Before");
+                //test.ExecuteNonQuery();
+                foreach (DataGridViewRow row in dataGridView_Professor.Rows)
+                {
+                    
+                    //professorID = dataGridView_Professor.Rows[i].Cells[0].ToString();
+                    firstName = dataGridView_Professor.Rows[i].Cells[1].Value.ToString();
+                    lastName = dataGridView_Professor.Rows[i].Cells[2].Value.ToString();
+                    officeNumber = dataGridView_Professor.Rows[i].Cells[3].Value.ToString();
+                    cellPhoneNumber = dataGridView_Professor.Rows[i].Cells[4].Value.ToString();
+                    officePhoneNumber = dataGridView_Professor.Rows[i].Cells[5].Value.ToString();
+                    fullName = dataGridView_Professor.Rows[i].Cells[6].Value.ToString();
+
+                    updateProfessorInfo = new SqlCommand
+                        ("UPDATE dbo.Professor " +
+                         "SET Professor.FirstName = '" + firstName + "', Professor.LastName = '" + lastName + "', Professor.OfficeNumber = '" + officeNumber + "', Professor.CellPhoneNumber = '" + cellPhoneNumber + "', Professor.OfficePhoneNumber ='" + officePhoneNumber + "', Professor.FullName = '" + fullName +
+                         "' WHERE Professor.ProfessorID = " + dataGridView_Professor.Rows[i].Cells[0].Value.ToString() + ";", sqlCon);
+                    MessageBox.Show("Before");
+                    updateProfessorInfo.ExecuteNonQuery();
+                    MessageBox.Show("After!");
+                    i++;
+                    
+                }
+                sqlCon.Close();
+                
+            }
+
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            
+        
+        
+        
         }
 
         /* /////////////////////////////////// 
@@ -407,7 +472,7 @@ namespace SchedulingSystem_Style2
         {
             button_AddProfessor_ViewEditPreferences.Visible = false;
             dataGridView_Schedule.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue;
-            dataGridView_Professor.Columns.Clear();
+            /*dataGridView_Professor.Columns.Clear();
             dataGridView_Professor.Rows.Clear();
 
             // Add Column headers
@@ -418,7 +483,7 @@ namespace SchedulingSystem_Style2
             dataGridView_Professor.Columns.Add("Online", "Online");
 
             // Add Rows
-            dataGridView_Professor.Rows.Add("Any", "10:20", "CS 170", "No", "No");
+            dataGridView_Professor.Rows.Add("Any", "10:20", "CS 170", "No", "No");*/
         }
 
         private void AdminMain_Load(object sender, EventArgs e)
