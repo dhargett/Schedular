@@ -133,6 +133,12 @@
             this.button_Schedule_GenerateSchedule = new System.Windows.Forms.Button();
             this.label_Logout = new System.Windows.Forms.Label();
             this.professorTableAdapter = new SchedulingSystem_Style2.MCSP_SchedulerDataSetTableAdapters.ProfessorTableAdapter();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.button_MakeSchedule_ViewClasses = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.button_MakeSchedule_EditSectionDetails = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -162,6 +168,9 @@
             this.tabPage5.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -170,6 +179,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Location = new System.Drawing.Point(12, 32);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -324,7 +334,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(962, 462);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Add Professor";
+            this.tabPage2.Text = "Professor";
             // 
             // pictureBox_AddProfessor_Eagle
             // 
@@ -390,7 +400,7 @@
             // 
             // button_AddProfessor_Edit
             // 
-            this.button_AddProfessor_Edit.Location = new System.Drawing.Point(266, 9);
+            this.button_AddProfessor_Edit.Location = new System.Drawing.Point(359, 9);
             this.button_AddProfessor_Edit.Name = "button_AddProfessor_Edit";
             this.button_AddProfessor_Edit.Size = new System.Drawing.Size(87, 23);
             this.button_AddProfessor_Edit.TabIndex = 21;
@@ -589,7 +599,7 @@
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(962, 462);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Add Class";
+            this.tabPage3.Text = "Class";
             // 
             // pictureBox_AddClass_Eagle
             // 
@@ -1197,7 +1207,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(226, 49);
+            this.button1.Location = new System.Drawing.Point(273, 346);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(108, 23);
             this.button1.TabIndex = 2;
@@ -1207,7 +1217,7 @@
             // button_Schedule_GenerateSchedule
             // 
             this.button_Schedule_GenerateSchedule.ForeColor = System.Drawing.Color.Black;
-            this.button_Schedule_GenerateSchedule.Location = new System.Drawing.Point(99, 49);
+            this.button_Schedule_GenerateSchedule.Location = new System.Drawing.Point(98, 346);
             this.button_Schedule_GenerateSchedule.Name = "button_Schedule_GenerateSchedule";
             this.button_Schedule_GenerateSchedule.Size = new System.Drawing.Size(108, 23);
             this.button_Schedule_GenerateSchedule.TabIndex = 1;
@@ -1229,6 +1239,65 @@
             // professorTableAdapter
             // 
             this.professorTableAdapter.ClearBeforeFill = true;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.BackColor = System.Drawing.Color.Gold;
+            this.tabPage8.Controls.Add(this.listView1);
+            this.tabPage8.Controls.Add(this.panel7);
+            this.tabPage8.Controls.Add(this.dataGridView1);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(962, 462);
+            this.tabPage8.TabIndex = 4;
+            this.tabPage8.Text = "Create Schedule";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(37, 38);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(408, 351);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
+            this.panel7.Controls.Add(this.button_MakeSchedule_EditSectionDetails);
+            this.panel7.Controls.Add(this.button_MakeSchedule_ViewClasses);
+            this.panel7.Location = new System.Drawing.Point(37, 395);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(408, 44);
+            this.panel7.TabIndex = 25;
+            // 
+            // button_MakeSchedule_ViewClasses
+            // 
+            this.button_MakeSchedule_ViewClasses.Location = new System.Drawing.Point(26, 9);
+            this.button_MakeSchedule_ViewClasses.Name = "button_MakeSchedule_ViewClasses";
+            this.button_MakeSchedule_ViewClasses.Size = new System.Drawing.Size(96, 23);
+            this.button_MakeSchedule_ViewClasses.TabIndex = 20;
+            this.button_MakeSchedule_ViewClasses.Text = "View Classes";
+            this.button_MakeSchedule_ViewClasses.UseVisualStyleBackColor = true;
+            this.button_MakeSchedule_ViewClasses.Click += new System.EventHandler(this.button_MakeSchedule_ViewClasses_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(494, 38);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(366, 351);
+            this.listView1.TabIndex = 26;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // button_MakeSchedule_EditSectionDetails
+            // 
+            this.button_MakeSchedule_EditSectionDetails.Location = new System.Drawing.Point(225, 9);
+            this.button_MakeSchedule_EditSectionDetails.Name = "button_MakeSchedule_EditSectionDetails";
+            this.button_MakeSchedule_EditSectionDetails.Size = new System.Drawing.Size(110, 23);
+            this.button_MakeSchedule_EditSectionDetails.TabIndex = 21;
+            this.button_MakeSchedule_EditSectionDetails.Text = "Edit Section Details";
+            this.button_MakeSchedule_EditSectionDetails.UseVisualStyleBackColor = true;
+            this.button_MakeSchedule_EditSectionDetails.Click += new System.EventHandler(this.button_MakeSchedule_EditSectionDetails_Click);
             // 
             // AdminMain
             // 
@@ -1279,6 +1348,9 @@
             this.tabPage7.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            this.tabPage8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1390,6 +1462,12 @@
         private MCSP_SchedulerDataSet mCSP_SchedulerDataSet;
         private System.Windows.Forms.BindingSource professorBindingSource;
         private MCSP_SchedulerDataSetTableAdapters.ProfessorTableAdapter professorTableAdapter;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button button_MakeSchedule_ViewClasses;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button button_MakeSchedule_EditSectionDetails;
 
     }
 }

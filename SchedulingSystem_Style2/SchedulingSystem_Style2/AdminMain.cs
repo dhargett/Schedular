@@ -234,6 +234,7 @@ namespace SchedulingSystem_Style2
             {
                 //dataGridView_Professor.Columns.Clear();
                 //dataGridView_Professor.Rows.Clear();
+
                 sqlCon.Open();
                 
                 SqlDataAdapter loadProfessorList = new SqlDataAdapter("SELECT * FROM Professor", sqlCon);
@@ -395,7 +396,40 @@ namespace SchedulingSystem_Style2
         
         
         }
+        
+        private void button_Submit_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Complete 1");
+            string professorID = maskedTextBox_MsuIDRight.Text;
+            string firstName = textBox_FirstNameRight.Text;
+            string lastName = textBox_LastNameRight.Text;
+            string officeNumber = textBox_OfficeRoomNumberRight.Text;
+            string fullName = firstName + " " + lastName;
+            string officePhoneNumber = maskedTextBox_OfficePhoneNumberRight.Text;
+            string cellPhoneNumber = maskedTextBox_CellPhoneNumberRight.Text;
 
+            SqlConnection sqlCon = new SqlConnection(@"Data Source=DYLAN-PC\DYLAN;Initial Catalog=MCSP_Scheduler;Integrated Security=True");
+
+            SqlCommand insertProfessorInfo = new SqlCommand("INSERT INTO dbo.Professor(ProfessorID, FirstName, LastName, OfficeNumber, CellPhoneNumber, OfficePhoneNumber, FullName) VALUES ('" + professorID + "','" + firstName + "', '" + lastName + "', '" + officeNumber + "', '" + cellPhoneNumber + "', '" + officePhoneNumber + "', '" + fullName + "');", sqlCon);
+
+            try
+            {
+                
+                sqlCon.Open();
+
+                insertProfessorInfo.ExecuteNonQuery();
+                
+                sqlCon.Close();
+                
+            }
+
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            
+
+        }
         /* /////////////////////////////////// 
          *      Schedule
          * 
@@ -493,38 +527,89 @@ namespace SchedulingSystem_Style2
 
         }
 
-        private void button_Submit_Click(object sender, EventArgs e)
+
+
+        /* /////////////////////////////////// 
+         *     Make Schedule
+         * 
+         */
+        //////////////////////////////////
+
+        private void button_MakeSchedule_ViewClasses_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Complete 1");
-            string professorID = maskedTextBox_MsuIDRight.Text;
-            string firstName = textBox_FirstNameRight.Text;
-            string lastName = textBox_LastNameRight.Text;
-            string officeNumber = textBox_OfficeRoomNumberRight.Text;
-            string fullName = firstName + " " + lastName;
-            string officePhoneNumber = maskedTextBox_OfficePhoneNumberRight.Text;
-            string cellPhoneNumber = maskedTextBox_CellPhoneNumberRight.Text;
-
-            SqlConnection sqlCon = new SqlConnection(@"Data Source=DYLAN-PC\DYLAN;Initial Catalog=MCSP_Scheduler;Integrated Security=True");
-
-            SqlCommand insertProfessorInfo = new SqlCommand("INSERT INTO dbo.Professor(ProfessorID, FirstName, LastName, OfficeNumber, CellPhoneNumber, OfficePhoneNumber, FullName) VALUES ('" + professorID + "','" + firstName + "', '" + lastName + "', '" + officeNumber + "', '" + cellPhoneNumber + "', '" + officePhoneNumber + "', '" + fullName + "');", sqlCon);
+             SqlConnection sqlCon = new SqlConnection(@"Data Source=DYLAN-PC\DYLAN;Initial Catalog=MCSP_Scheduler;Integrated Security=True");
+            //SqlCommand loadProfessorList = new SqlCommand("SELECT * FROM Professor", sqlCon);
+             dataGridView1.AllowUserToAddRows = false;
 
             try
             {
-                MessageBox.Show("Complete 2");
+                //dataGridView1.ReadOnly = true;
+                dataGridView1.Columns.Clear();
+                //dataGridView_Professor.Rows.Clear();
+                DataGridViewCheckBoxColumn check = new DataGridViewCheckBoxColumn();
+                //chk.Width.Equals(15);
+                dataGridView1.Columns.Add(check);
+
                 sqlCon.Open();
-                MessageBox.Show("Complete3");
-                insertProfessorInfo.ExecuteNonQuery();
-                MessageBox.Show("Complete4");
+
+                SqlDataAdapter loadClassList = new SqlDataAdapter("SELECT Course.Subject, Course.CourseNumber, Course.CourseTitle FROM Course", sqlCon);
+                DataTable dt = new DataTable();
+                loadClassList.Fill(dt);
+                dataGridView1.DataSource = dt;
+                dataGridView1.Columns[1].ReadOnly = true;
+                dataGridView1.Columns[2].ReadOnly = true;
+                dataGridView1.Columns[3].ReadOnly = true;
                 sqlCon.Close();
-                MessageBox.Show("Complete 5");
+                /*DataGridViewComboBoxColumn combo = new DataGridViewComboBoxColumn();
+                for (int i = 0; i < 15; i++)
+                {
+                    combo.Items.Add(i+1);
+                }
+
+                dataGridView1.AllowUserToAddRows = false;
+                combo.HeaderText = "# of Sections";
+                dataGridView1.Columns.Add(combo);*/
+
+                //combo.ValueMember.Equals(combo.Selected.ToString()); // maybe???
+                //combo.DisplayMember.Equals(combo.Selected.ToString());
+                DataGridViewTextBoxColumn text = new DataGridViewTextBoxColumn();
+                text.HeaderText = "# of Sections";
+                text.ReadOnly = false;
+                dataGridView1.Columns.Add(text);
+                dataGridView1.Columns[0].Width = 25;
+                
             }
 
             catch (Exception ex)
             {
-                ex.ToString();
+                MessageBox.Show("In Exception"); // DELETE
+                MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
 
+        }
+
+        private void button_MakeSchedule_EditSectionDetails_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            int total = 0;
+            foreach(DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (Convert.ToBoolean(dataGridView1.Rows[i].Cells[0].Value) == true)
+                {
+                    total++;
+                    //MessageBox.Show(dataGridView1.Rows[i].Cells[0].Value.ToString());
+                    MessageBox.Show("Yes");
+                }
+                else
+                {
+                    //break;
+                    //MessageBox.Show(dataGridView1.Rows[i].Cells[0].Value.ToString());
+                    MessageBox.Show("Nope");
+                }
+                i++;
+            }
+
+            MessageBox.Show("total boxes checked: " + total);
         }
     }
 }
