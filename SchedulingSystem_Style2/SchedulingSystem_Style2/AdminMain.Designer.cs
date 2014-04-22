@@ -131,14 +131,15 @@
             this.button_Options_ProfessorTab_SpecificProfessorGenerate = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button_Schedule_GenerateSchedule = new System.Windows.Forms.Button();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.button_MakeSchedule_EditSectionDetails = new System.Windows.Forms.Button();
+            this.button_MakeSchedule_ViewClasses = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label_Logout = new System.Windows.Forms.Label();
             this.professorTableAdapter = new SchedulingSystem_Style2.MCSP_SchedulerDataSetTableAdapters.ProfessorTableAdapter();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.button_MakeSchedule_ViewClasses = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.button_MakeSchedule_EditSectionDetails = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.button_MakeSchedule_SubmitAndEditOtherSections = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -169,8 +170,8 @@
             this.tabPage7.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -183,7 +184,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 32);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(970, 488);
+            this.tabControl1.Size = new System.Drawing.Size(1052, 590);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -1224,6 +1225,58 @@
             this.button_Schedule_GenerateSchedule.Text = "Generate Schedule";
             this.button_Schedule_GenerateSchedule.UseVisualStyleBackColor = true;
             // 
+            // tabPage8
+            // 
+            this.tabPage8.BackColor = System.Drawing.Color.Gold;
+            this.tabPage8.Controls.Add(this.button_MakeSchedule_SubmitAndEditOtherSections);
+            this.tabPage8.Controls.Add(this.panel8);
+            this.tabPage8.Controls.Add(this.panel7);
+            this.tabPage8.Controls.Add(this.dataGridView1);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(1044, 564);
+            this.tabPage8.TabIndex = 4;
+            this.tabPage8.Text = "Create Schedule";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
+            this.panel7.Controls.Add(this.button_MakeSchedule_EditSectionDetails);
+            this.panel7.Controls.Add(this.button_MakeSchedule_ViewClasses);
+            this.panel7.Location = new System.Drawing.Point(37, 506);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(477, 44);
+            this.panel7.TabIndex = 25;
+            // 
+            // button_MakeSchedule_EditSectionDetails
+            // 
+            this.button_MakeSchedule_EditSectionDetails.Location = new System.Drawing.Point(225, 9);
+            this.button_MakeSchedule_EditSectionDetails.Name = "button_MakeSchedule_EditSectionDetails";
+            this.button_MakeSchedule_EditSectionDetails.Size = new System.Drawing.Size(110, 23);
+            this.button_MakeSchedule_EditSectionDetails.TabIndex = 21;
+            this.button_MakeSchedule_EditSectionDetails.Text = "Edit Section Details";
+            this.button_MakeSchedule_EditSectionDetails.UseVisualStyleBackColor = true;
+            this.button_MakeSchedule_EditSectionDetails.Click += new System.EventHandler(this.button_MakeSchedule_EditSectionDetails_Click);
+            // 
+            // button_MakeSchedule_ViewClasses
+            // 
+            this.button_MakeSchedule_ViewClasses.Location = new System.Drawing.Point(26, 9);
+            this.button_MakeSchedule_ViewClasses.Name = "button_MakeSchedule_ViewClasses";
+            this.button_MakeSchedule_ViewClasses.Size = new System.Drawing.Size(96, 23);
+            this.button_MakeSchedule_ViewClasses.TabIndex = 20;
+            this.button_MakeSchedule_ViewClasses.Text = "View Classes";
+            this.button_MakeSchedule_ViewClasses.UseVisualStyleBackColor = true;
+            this.button_MakeSchedule_ViewClasses.Click += new System.EventHandler(this.button_MakeSchedule_ViewClasses_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(37, 38);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(477, 449);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // label_Logout
             // 
             this.label_Logout.AutoSize = true;
@@ -1240,71 +1293,30 @@
             // 
             this.professorTableAdapter.ClearBeforeFill = true;
             // 
-            // tabPage8
+            // panel8
             // 
-            this.tabPage8.BackColor = System.Drawing.Color.Gold;
-            this.tabPage8.Controls.Add(this.listView1);
-            this.tabPage8.Controls.Add(this.panel7);
-            this.tabPage8.Controls.Add(this.dataGridView1);
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(962, 462);
-            this.tabPage8.TabIndex = 4;
-            this.tabPage8.Text = "Create Schedule";
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
+            this.panel8.Location = new System.Drawing.Point(555, 45);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(467, 442);
+            this.panel8.TabIndex = 26;
             // 
-            // dataGridView1
+            // button_MakeSchedule_SubmitAndEditOtherSections
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 38);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(408, 351);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
-            this.panel7.Controls.Add(this.button_MakeSchedule_EditSectionDetails);
-            this.panel7.Controls.Add(this.button_MakeSchedule_ViewClasses);
-            this.panel7.Location = new System.Drawing.Point(37, 395);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(408, 44);
-            this.panel7.TabIndex = 25;
-            // 
-            // button_MakeSchedule_ViewClasses
-            // 
-            this.button_MakeSchedule_ViewClasses.Location = new System.Drawing.Point(26, 9);
-            this.button_MakeSchedule_ViewClasses.Name = "button_MakeSchedule_ViewClasses";
-            this.button_MakeSchedule_ViewClasses.Size = new System.Drawing.Size(96, 23);
-            this.button_MakeSchedule_ViewClasses.TabIndex = 20;
-            this.button_MakeSchedule_ViewClasses.Text = "View Classes";
-            this.button_MakeSchedule_ViewClasses.UseVisualStyleBackColor = true;
-            this.button_MakeSchedule_ViewClasses.Click += new System.EventHandler(this.button_MakeSchedule_ViewClasses_Click);
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(494, 38);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(366, 351);
-            this.listView1.TabIndex = 26;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // button_MakeSchedule_EditSectionDetails
-            // 
-            this.button_MakeSchedule_EditSectionDetails.Location = new System.Drawing.Point(225, 9);
-            this.button_MakeSchedule_EditSectionDetails.Name = "button_MakeSchedule_EditSectionDetails";
-            this.button_MakeSchedule_EditSectionDetails.Size = new System.Drawing.Size(110, 23);
-            this.button_MakeSchedule_EditSectionDetails.TabIndex = 21;
-            this.button_MakeSchedule_EditSectionDetails.Text = "Edit Section Details";
-            this.button_MakeSchedule_EditSectionDetails.UseVisualStyleBackColor = true;
-            this.button_MakeSchedule_EditSectionDetails.Click += new System.EventHandler(this.button_MakeSchedule_EditSectionDetails_Click);
+            this.button_MakeSchedule_SubmitAndEditOtherSections.Location = new System.Drawing.Point(688, 515);
+            this.button_MakeSchedule_SubmitAndEditOtherSections.Name = "button_MakeSchedule_SubmitAndEditOtherSections";
+            this.button_MakeSchedule_SubmitAndEditOtherSections.Size = new System.Drawing.Size(165, 23);
+            this.button_MakeSchedule_SubmitAndEditOtherSections.TabIndex = 27;
+            this.button_MakeSchedule_SubmitAndEditOtherSections.Text = "Submit and Edit Other Sections";
+            this.button_MakeSchedule_SubmitAndEditOtherSections.UseVisualStyleBackColor = true;
+            this.button_MakeSchedule_SubmitAndEditOtherSections.Click += new System.EventHandler(this.button_MakeSchedule_SubmitAndEditOtherSections_Click);
             // 
             // AdminMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(171)))));
-            this.ClientSize = new System.Drawing.Size(994, 548);
+            this.ClientSize = new System.Drawing.Size(1084, 634);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label_Logout);
             this.Name = "AdminMain";
@@ -1349,8 +1361,8 @@
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             this.tabPage8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1466,8 +1478,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button button_MakeSchedule_ViewClasses;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button button_MakeSchedule_EditSectionDetails;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button button_MakeSchedule_SubmitAndEditOtherSections;
 
     }
 }

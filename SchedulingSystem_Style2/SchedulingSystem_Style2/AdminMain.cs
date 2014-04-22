@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections; // for arraylist
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +19,7 @@ namespace SchedulingSystem_Style2
         public AdminMain()
         {
             InitializeComponent();
-
+            
             panel2.Enabled = false;
             button_AddClass_Edit.Visible = false;
             button_AddClass_Delete.Visible = false;
@@ -588,17 +589,27 @@ namespace SchedulingSystem_Style2
 
         }
 
+
+        ArrayList sectionNumbers = new ArrayList(); // global-ish??
+
         private void button_MakeSchedule_EditSectionDetails_Click(object sender, EventArgs e)
         {
             int i = 0;
             int total = 0;
+            
+            //int[] numbers = ;
             foreach(DataGridViewRow row in dataGridView1.Rows)
             {
                 if (Convert.ToBoolean(dataGridView1.Rows[i].Cells[0].Value) == true)
                 {
                     total++;
-                    //MessageBox.Show(dataGridView1.Rows[i].Cells[0].Value.ToString());
-                    MessageBox.Show("Yes");
+                    MessageBox.Show(dataGridView1.Rows[i].Cells[4].Value.ToString());
+
+                    sectionNumbers.Add(dataGridView1.Rows[i].Cells[4].Value);
+
+
+
+                    //MessageBox.Show("Yes");
                 }
                 else
                 {
@@ -608,8 +619,282 @@ namespace SchedulingSystem_Style2
                 }
                 i++;
             }
-
+             // DEBUG LOOP
+            for (int h = 0; h < sectionNumbers.Count; h++)
+            {
+                MessageBox.Show("SectionNumbers[" + h + "] = " + sectionNumbers[h].ToString());
+            }
             MessageBox.Show("total boxes checked: " + total);
         }
+
+        private void button_MakeSchedule_SubmitAndEditOtherSections_Click(object sender, EventArgs e)
+        {
+              // DEBUG loop
+            for (int h = 0; h < sectionNumbers.Count; h++)
+            {
+                MessageBox.Show("SectionNumbers[" + h + "] = " + sectionNumbers[h].ToString());
+            }
+
+            //MessageBox.Show("total boxes checked: " + total);
+
+
+            
+            int i = 1;
+            // Combo Boxes
+            int cmboBox_Professorx = 65, cmboBox_Professory = 35;
+            int cmboBox_Computersx = 255, cmboBox_Computersy = 35;
+            int cmboBox_SoundSystemx = 255, cmboBox_SoundSystemy = 60;
+            int cmboBox_Projectorx = 255, cmboBox_Projectory = 85;
+
+            // Labels
+            int label_Professorx = 10, label_Professory = 37;
+            int label_Computersx = 175, label_Computersy = 37;
+            int label_SoundSystemx = 175, label_SoundSystemy = 62;
+            int label_Projectorx = 175, label_Projectory = 87;
+            int label_ClassSizex = 9, label_ClassSizey = 87;
+            int label_Footerx = 150, label_Footery = 155;
+            int label_Course_headerx = 10, label_Course_headery = 12;
+                // numeric up-down
+            int numUpDown_ClassSizex = 65, numUpDown_ClassSizey = 85;
+
+                // check box 
+            int checkBox_Onlinex = 245, checkBox_Onliney = 115;
+            for (int j = 0; j < sectionNumbers.Count; j++)
+            {
+                
+                // Removed label coordinates from the loop to keep from writing over pre existing controls (yay?? Nay????)
+                int numberOfSections = (int)System.Convert.ChangeType(sectionNumbers[j], typeof(int));
+
+
+                //int box1x = 5, box1y = 5;
+                //int label_Section_headerx = 155, label_Section_headery = 12;
+
+                
+
+
+                panel8.AutoScroll = true;
+                for (i = 1; i <= numberOfSections; i++)
+                {
+
+
+                    ///////////////////////////
+                    // create combo boxes
+                    //////////////////////////
+                    ComboBox cmboBox_Professor = new ComboBox();
+                    cmboBox_Professor.Name = "cmboBox_Professor" + i.ToString();
+                    cmboBox_Professor.Location = new Point(cmboBox_Professorx, cmboBox_Professory);
+                    cmboBox_Professor.Height = 20;
+                    cmboBox_Professor.Width = 65;
+                    panel8.Controls.Add(cmboBox_Professor);
+
+                    ComboBox cmboBox_Computers = new ComboBox();
+                    cmboBox_Computers.Name = "cmboBox_Computers" + i.ToString();
+                    cmboBox_Computers.Location = new Point(cmboBox_Computersx, cmboBox_Computersy);
+                    cmboBox_Computers.Height = 20;
+                    cmboBox_Computers.Width = 65;
+
+                    panel8.Controls.Add(cmboBox_Computers);
+
+                    ComboBox cmboBox_SoundSystem = new ComboBox();
+                    cmboBox_SoundSystem.Name = "cmboBox_SoundSystem" + i.ToString();
+                    cmboBox_SoundSystem.Location = new Point(cmboBox_SoundSystemx, cmboBox_SoundSystemy);
+                    cmboBox_SoundSystem.Height = 20;
+                    cmboBox_SoundSystem.Width = 65;
+                    panel8.Controls.Add(cmboBox_SoundSystem);
+
+                    ComboBox cmboBox_Projector = new ComboBox();
+                    cmboBox_Projector.Name = "cmboBox_Projector" + i.ToString();
+                    cmboBox_Projector.Location = new Point(cmboBox_Projectorx, cmboBox_Projectory);
+                    cmboBox_Projector.Height = 20;
+                    cmboBox_Projector.Width = 65;
+                    panel8.Controls.Add(cmboBox_Projector);
+
+                    // create numeric up down 
+                    NumericUpDown numUpDown_ClassSize = new NumericUpDown();
+                    numUpDown_ClassSize.Name = "numUpDown_ClassSize" + i.ToString();
+                    numUpDown_ClassSize.Location = new Point(numUpDown_ClassSizex, numUpDown_ClassSizey);
+                    numUpDown_ClassSize.Width = 41;
+                    numUpDown_ClassSize.Height = 20;
+                    panel8.Controls.Add(numUpDown_ClassSize);
+
+
+                    ///////////////////////////
+                    // create checkbox
+                    //////////////////////////
+                    CheckBox checkBox_Online = new CheckBox();
+                    checkBox_Online.Text = "Online class";
+                    checkBox_Online.Name = "checkBox_Online" + i.ToString();
+                    checkBox_Online.Location = new Point(checkBox_Onlinex, checkBox_Onliney);
+                    checkBox_Online.Click += new EventHandler(checkBox_Online_Click);
+                    panel8.Controls.Add(checkBox_Online);
+
+                    //////////////////////////
+                    // create labels
+                    //////////////////////////
+                    Label label_Professor = new Label();
+                    label_Professor.Text = "Professor:";
+                    label_Professor.Name = "label_Professor" + i.ToString();
+                    label_Professor.Location = new Point(label_Professorx, label_Professory);
+                    panel8.Controls.Add(label_Professor);
+
+
+                    Label label_Computers = new Label();
+                    label_Computers.Text = "Computers:";
+                    label_Computers.Name = "label_Computers" + i.ToString();
+                    label_Computers.Location = new Point(label_Computersx, label_Computersy);
+                    panel8.Controls.Add(label_Computers);
+
+
+                    Label label_SoundSystem = new Label();
+                    label_SoundSystem.Text = "Sound System:";
+                    label_SoundSystem.Name = "label_SoundSystem" + i.ToString();
+                    label_SoundSystem.Location = new Point(label_SoundSystemx, label_SoundSystemy);
+                    panel8.Controls.Add(label_SoundSystem);
+
+
+                    Label label_ClassSize = new Label();
+                    label_ClassSize.Text = "Size:";
+                    label_ClassSize.Name = "label_ClassSize" + i.ToString();
+                    label_ClassSize.Location = new Point(label_ClassSizex, label_ClassSizey);
+                    panel8.Controls.Add(label_ClassSize);
+
+
+                    Label label_Projector = new Label();
+                    label_Projector.Text = "Projector:";
+                    label_Projector.Name = "label_Projector" + i.ToString();
+                    label_Projector.Location = new Point(label_Projectorx, label_Projectory);
+                    panel8.Controls.Add(label_Projector);
+
+
+                    Label label_Footer = new Label();
+                    label_Footer.Text = "";
+                    label_Footer.Name = "label_Footer" + i.ToString();
+                    label_Footer.Location = new Point(label_Footerx, label_Footery);
+                    panel8.Controls.Add(label_Footer);
+
+
+                    Label label_Course_header = new Label();
+                    label_Course_header.Text = "Course - 00" + (i).ToString();
+                    label_Course_header.Name = "label_Course_header" + i.ToString();
+                    label_Course_header.Location = new Point(label_Course_headerx, label_Course_headery);
+                    panel8.Controls.Add(label_Course_header);
+
+                    //--------------------------
+                    // UPDATE Y-Coordinates
+                    //--------------------------
+                    // combo boxes
+                    cmboBox_Professory += 150;
+                    cmboBox_Computersy += 150;
+                    cmboBox_SoundSystemy += 150;
+                    cmboBox_Projectory += 150;
+
+                    // labels
+                    label_Professory += 150;
+                    label_Computersy += 150;
+                    label_SoundSystemy += 150;
+                    label_Projectory += 150;
+                    label_ClassSizey += 150;
+                    label_Footery += 150;
+                    label_Course_headery += 150;
+                    //label_Section_headery += 150;
+
+                    // numeric up down
+                    numUpDown_ClassSizey += 150;
+
+                    // checkbox
+                    checkBox_Onliney += 150;
+
+                }
+
+
+            }
+
+        }
+
+
+        void checkBox_Online_Click(object sender, EventArgs e)
+        {
+
+            CheckBox cb = sender as CheckBox;
+            string cb_temp = cb.Name.Remove(15); // gets original name :D (excludes the number)
+
+            if (cb.Checked == true)
+            {
+
+                cb.Name = cb.Name.Remove(0, 15);
+                int length = cb.Name.Length; // gets the length of the name (of the checkbox control.
+                string controlNumber = ""; // will be used to "build" the controls # (accounts for multiple digits)
+
+                for (int i = 0; i < length; i++)
+                {
+                    string index = (string)System.Convert.ChangeType(cb.Name[i], typeof(string));
+                    controlNumber = string.Concat(controlNumber, index);
+                    controlNumber.Insert(i, index);
+                }
+
+                string name = string.Concat("cmboBox_Computers", controlNumber);
+                ComboBox cmb1 = panel8.Controls.Find(name, true).FirstOrDefault() as ComboBox;//(ComboBox)System.Convert.ChangeType(panel1.Controls.Find(name, true), typeof(ComboBox));
+
+                cmb1.Text = "";
+                cmb1.Enabled = false;
+
+                name = string.Concat("cmboBox_SoundSystem", controlNumber);
+                ComboBox cmb2 = panel8.Controls.Find(name, true).FirstOrDefault() as ComboBox;
+
+                cmb2.Text = "";
+                cmb2.Enabled = false;
+
+                name = string.Concat("cmboBox_Projector", controlNumber);
+                ComboBox cmb3 = panel8.Controls.Find(name, true).FirstOrDefault() as ComboBox;
+
+                cmb3.Text = "";
+                cmb3.Enabled = false;
+
+                cb.Name = string.Concat(cb_temp, cb.Name); // rebuilds the original checkbox string
+            }
+
+            else if (cb.Checked == false)
+            {
+                cb.Name = cb.Name.Remove(0, 15);
+                int length = cb.Name.Length; // gets the length of the name (of the checkbox control.
+                string controlNumber = ""; // will be used to "build" the controls # (accounts for multiple digits)
+
+                for (int i = 0; i < length; i++)
+                {
+                    string index = (string)System.Convert.ChangeType(cb.Name[i], typeof(string));
+                    controlNumber = string.Concat(controlNumber, index);
+                    controlNumber.Insert(i, index);
+                }
+
+                string name = string.Concat("cmboBox_Computers", controlNumber);
+                ComboBox cmb1 = panel8.Controls.Find(name, true).FirstOrDefault() as ComboBox;
+
+                cmb1.Text = "";
+                cmb1.Enabled = true;
+
+                name = string.Concat("cmboBox_SoundSystem", controlNumber);
+                ComboBox cmb2 = panel8.Controls.Find(name, true).FirstOrDefault() as ComboBox;
+
+                cmb2.Text = "";
+                cmb2.Enabled = true;
+
+                name = string.Concat("cmboBox_Projector", controlNumber);
+                ComboBox cmb3 = panel8.Controls.Find(name, true).FirstOrDefault() as ComboBox;
+
+                cmb3.Text = "";
+                cmb3.Enabled = true;
+                cb.Name = string.Concat(cb_temp, cb.Name);
+            }
+
+
+        }
+
+
+
+
+
+
+
+
     }
 }
