@@ -630,10 +630,10 @@ namespace SchedulingSystem_Style2
         private void button_MakeSchedule_SubmitAndEditOtherSections_Click(object sender, EventArgs e)
         {
               // DEBUG loop
-            for (int h = 0; h < sectionNumbers.Count; h++)
+            /*for (int h = 0; h < sectionNumbers.Count; h++)
             {
                 MessageBox.Show("SectionNumbers[" + h + "] = " + sectionNumbers[h].ToString());
-            }
+            }*/
 
             //MessageBox.Show("total boxes checked: " + total);
 
@@ -659,19 +659,23 @@ namespace SchedulingSystem_Style2
 
                 // check box 
             int checkBox_Onlinex = 245, checkBox_Onliney = 115;
+            
+            
+            int globalSectionCount = 1; // This variable
+
             for (int j = 0; j < sectionNumbers.Count; j++)
             {
                 
-                // Removed label coordinates from the loop to keep from writing over pre existing controls (yay?? Nay????)
+                // Removed label coordinates from the loop to keep from writing over pre existing controls ([YAY] Nay????)
                 int numberOfSections = (int)System.Convert.ChangeType(sectionNumbers[j], typeof(int));
 
 
                 //int box1x = 5, box1y = 5;
                 //int label_Section_headerx = 155, label_Section_headery = 12;
 
+
+
                 
-
-
                 panel8.AutoScroll = true;
                 for (i = 1; i <= numberOfSections; i++)
                 {
@@ -681,14 +685,14 @@ namespace SchedulingSystem_Style2
                     // create combo boxes
                     //////////////////////////
                     ComboBox cmboBox_Professor = new ComboBox();
-                    cmboBox_Professor.Name = "cmboBox_Professor" + i.ToString();
+                    cmboBox_Professor.Name = "cmboBox_Professor" + globalSectionCount.ToString();
                     cmboBox_Professor.Location = new Point(cmboBox_Professorx, cmboBox_Professory);
                     cmboBox_Professor.Height = 20;
                     cmboBox_Professor.Width = 65;
                     panel8.Controls.Add(cmboBox_Professor);
 
                     ComboBox cmboBox_Computers = new ComboBox();
-                    cmboBox_Computers.Name = "cmboBox_Computers" + i.ToString();
+                    cmboBox_Computers.Name = "cmboBox_Computers" + globalSectionCount.ToString();
                     cmboBox_Computers.Location = new Point(cmboBox_Computersx, cmboBox_Computersy);
                     cmboBox_Computers.Height = 20;
                     cmboBox_Computers.Width = 65;
@@ -696,14 +700,14 @@ namespace SchedulingSystem_Style2
                     panel8.Controls.Add(cmboBox_Computers);
 
                     ComboBox cmboBox_SoundSystem = new ComboBox();
-                    cmboBox_SoundSystem.Name = "cmboBox_SoundSystem" + i.ToString();
+                    cmboBox_SoundSystem.Name = "cmboBox_SoundSystem" + globalSectionCount.ToString();
                     cmboBox_SoundSystem.Location = new Point(cmboBox_SoundSystemx, cmboBox_SoundSystemy);
                     cmboBox_SoundSystem.Height = 20;
                     cmboBox_SoundSystem.Width = 65;
                     panel8.Controls.Add(cmboBox_SoundSystem);
 
                     ComboBox cmboBox_Projector = new ComboBox();
-                    cmboBox_Projector.Name = "cmboBox_Projector" + i.ToString();
+                    cmboBox_Projector.Name = "cmboBox_Projector" + globalSectionCount.ToString();
                     cmboBox_Projector.Location = new Point(cmboBox_Projectorx, cmboBox_Projectory);
                     cmboBox_Projector.Height = 20;
                     cmboBox_Projector.Width = 65;
@@ -711,7 +715,7 @@ namespace SchedulingSystem_Style2
 
                     // create numeric up down 
                     NumericUpDown numUpDown_ClassSize = new NumericUpDown();
-                    numUpDown_ClassSize.Name = "numUpDown_ClassSize" + i.ToString();
+                    numUpDown_ClassSize.Name = "numUpDown_ClassSize" + globalSectionCount.ToString();
                     numUpDown_ClassSize.Location = new Point(numUpDown_ClassSizex, numUpDown_ClassSizey);
                     numUpDown_ClassSize.Width = 41;
                     numUpDown_ClassSize.Height = 20;
@@ -723,7 +727,7 @@ namespace SchedulingSystem_Style2
                     //////////////////////////
                     CheckBox checkBox_Online = new CheckBox();
                     checkBox_Online.Text = "Online class";
-                    checkBox_Online.Name = "checkBox_Online" + i.ToString();
+                    checkBox_Online.Name = "checkBox_Online" + globalSectionCount.ToString();
                     checkBox_Online.Location = new Point(checkBox_Onlinex, checkBox_Onliney);
                     checkBox_Online.Click += new EventHandler(checkBox_Online_Click);
                     panel8.Controls.Add(checkBox_Online);
@@ -733,49 +737,49 @@ namespace SchedulingSystem_Style2
                     //////////////////////////
                     Label label_Professor = new Label();
                     label_Professor.Text = "Professor:";
-                    label_Professor.Name = "label_Professor" + i.ToString();
+                    label_Professor.Name = "label_Professor" + globalSectionCount.ToString();
                     label_Professor.Location = new Point(label_Professorx, label_Professory);
                     panel8.Controls.Add(label_Professor);
 
 
                     Label label_Computers = new Label();
                     label_Computers.Text = "Computers:";
-                    label_Computers.Name = "label_Computers" + i.ToString();
+                    label_Computers.Name = "label_Computers" + globalSectionCount.ToString();
                     label_Computers.Location = new Point(label_Computersx, label_Computersy);
                     panel8.Controls.Add(label_Computers);
 
 
                     Label label_SoundSystem = new Label();
                     label_SoundSystem.Text = "Sound System:";
-                    label_SoundSystem.Name = "label_SoundSystem" + i.ToString();
+                    label_SoundSystem.Name = "label_SoundSystem" + globalSectionCount.ToString();
                     label_SoundSystem.Location = new Point(label_SoundSystemx, label_SoundSystemy);
                     panel8.Controls.Add(label_SoundSystem);
 
 
                     Label label_ClassSize = new Label();
                     label_ClassSize.Text = "Size:";
-                    label_ClassSize.Name = "label_ClassSize" + i.ToString();
+                    label_ClassSize.Name = "label_ClassSize" + globalSectionCount.ToString();
                     label_ClassSize.Location = new Point(label_ClassSizex, label_ClassSizey);
                     panel8.Controls.Add(label_ClassSize);
 
 
                     Label label_Projector = new Label();
                     label_Projector.Text = "Projector:";
-                    label_Projector.Name = "label_Projector" + i.ToString();
+                    label_Projector.Name = "label_Projector" + globalSectionCount.ToString();
                     label_Projector.Location = new Point(label_Projectorx, label_Projectory);
                     panel8.Controls.Add(label_Projector);
 
 
                     Label label_Footer = new Label();
                     label_Footer.Text = "";
-                    label_Footer.Name = "label_Footer" + i.ToString();
+                    label_Footer.Name = "label_Footer" + globalSectionCount.ToString();
                     label_Footer.Location = new Point(label_Footerx, label_Footery);
                     panel8.Controls.Add(label_Footer);
 
 
                     Label label_Course_header = new Label();
                     label_Course_header.Text = "Course - 00" + (i).ToString();
-                    label_Course_header.Name = "label_Course_header" + i.ToString();
+                    label_Course_header.Name = "label_Course_header" + globalSectionCount.ToString();
                     label_Course_header.Location = new Point(label_Course_headerx, label_Course_headery);
                     panel8.Controls.Add(label_Course_header);
 
@@ -803,7 +807,7 @@ namespace SchedulingSystem_Style2
 
                     // checkbox
                     checkBox_Onliney += 150;
-
+                    globalSectionCount++; // added to account for multiple section of different courses being made
                 }
 
 
@@ -817,7 +821,7 @@ namespace SchedulingSystem_Style2
 
             CheckBox cb = sender as CheckBox;
             string cb_temp = cb.Name.Remove(15); // gets original name :D (excludes the number)
-
+            MessageBox.Show("Meeage box: " + cb.Name.ToString() + " checked!");
             if (cb.Checked == true)
             {
 
